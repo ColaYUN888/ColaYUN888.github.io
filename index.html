@@ -44,7 +44,7 @@ body{background:#1a1a1a;color:#fff}
 
 .case-list{display:flex;flex-wrap:wrap;margin:0 -10px}
 .case-item{width:25%;padding:0 10px;margin-bottom:20px}
-.case-item .box{background:#222;border-radius:4px;overflow:hidden}
+.case-item .box{background:#222;border-radius:4px;overflow:hidden;cursor:pointer}
 .case-item img{width:100%;height:180px;object-fit:cover}
 
 .page{display:none}
@@ -54,6 +54,11 @@ body{background:#1a1a1a;color:#fff}
 .contact p{margin-bottom:12px;font-size:16px;color:#eee}
 
 .footer{background:#000;padding:30px;text-align:center;color:#777;margin-top:30px}
+
+/* 点击放大样式 */
+.img-popup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);display:none;justify-content:center;align-items:center;z-index:9999}
+.img-popup img{max-width:90%;max-height:90%}
+.img-popup .close{position:absolute;top:20px;right:30px;font-size:40px;color:#fff;cursor:pointer}
 </style>
 </head>
 
@@ -100,40 +105,40 @@ body{background:#1a1a1a;color:#fff}
 
 <div class="main">
 
-<!-- 首页：公司环境 + 团队 + 工作照片 + 文案 -->
+<!-- 首页 -->
 <div id="home" class="page active">
   <h2>欢迎来到 CYGG 游戏美术工作室</h2>
   <p class="desc">我们是一支专注于游戏美术制作的专业团队，提供原画设计、3D建模、UI界面、卡牌插画等一站式美术外包服务。用心创作每一份作品，用实力满足客户需求！</p>
   <h3>🏢 工作环境 & 团队风采</h3>
   <div class="case-list">
-    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/office1/600/400"></div></div>
-    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/office2/600/400"></div></div>
-    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/team1/600/400"></div></div>
-    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/team2/600/400"></div></div>
-    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/work1/600/400"></div></div>
-    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/work2/600/400"></div></div>
-    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/life1/600/400"></div></div>
-    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/life2/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/office1/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/office2/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/team1/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/team2/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/work1/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/work2/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/life1/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/life2/600/400"></div></div>
   </div>
 </div>
 
-<!-- 作品展示：全分类专业作品图 -->
+<!-- 作品展示 -->
 <div id="art" class="page">
   <h2>作品展示</h2>
   <p class="desc">点击下方分类，查看我们的专业美术作品，涵盖2D原画、3D模型、UI设计等全品类游戏美术资源。</p>
   <div class="case-list">
-    <div class="case-item" data-cat="scene"><div class="box"><img src="https://picsum.photos/seed/scene1/600/400"></div></div>
-    <div class="case-item" data-cat="scene"><div class="box"><img src="https://picsum.photos/seed/scene2/600/400"></div></div>
-    <div class="case-item" data-cat="scene"><div class="box"><img src="https://picsum.photos/seed/scene3/600/400"></div></div>
-    <div class="case-item" data-cat="char"><div class="box"><img src="https://picsum.photos/seed/char1/600/400"></div></div>
-    <div class="case-item" data-cat="char"><div class="box"><img src="https://picsum.photos/seed/char2/600/400"></div></div>
-    <div class="case-item" data-cat="card"><div class="box"><img src="https://picsum.photos/seed/card1/600/400"></div></div>
-    <div class="case-item" data-cat="card"><div class="box"><img src="https://picsum.photos/seed/card2/600/400"></div></div>
-    <div class="case-item" data-cat="ui"><div class="box"><img src="https://picsum.photos/seed/ui1/600/400"></div></div>
-    <div class="case-item" data-cat="ui"><div class="box"><img src="https://picsum.photos/seed/ui2/600/400"></div></div>
-    <div class="case-item" data-cat="model"><div class="box"><img src="https://picsum.photos/seed/model1/600/400"></div></div>
-    <div class="case-item" data-cat="model"><div class="box"><img src="https://picsum.photos/seed/model2/600/400"></div></div>
-    <div class="case-item" data-cat="model"><div class="box"><img src="https://picsum.photos/seed/model3/600/400"></div></div>
+    <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/scene1/600/400"></div></div>
+    <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/scene2/600/400"></div></div>
+    <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/scene3/600/400"></div></div>
+    <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/char1/600/400"></div></div>
+    <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/char2/600/400"></div></div>
+    <div class="case-item" data-cat="card"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/card1/600/400"></div></div>
+    <div class="case-item" data-cat="card"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/card2/600/400"></div></div>
+    <div class="case-item" data-cat="ui"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/ui1/600/400"></div></div>
+    <div class="case-item" data-cat="ui"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/ui2/600/400"></div></div>
+    <div class="case-item" data-cat="model"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/model1/600/400"></div></div>
+    <div class="case-item" data-cat="model"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/model2/600/400"></div></div>
+    <div class="case-item" data-cat="model"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/model3/600/400"></div></div>
   </div>
 </div>
 
@@ -144,10 +149,10 @@ body{background:#1a1a1a;color:#fff}
   团队成员均来自一线游戏公司，擅长各类风格美术创作，服务客户遍布全国。<br>
   我们坚持高品质、高效率、诚信合作，致力于成为您最信赖的美术外包合作伙伴。</p>
   <div class="case-list">
-    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/about1/600/400"></div></div>
-    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/about2/600/400"></div></div>
-    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/about3/600/400"></div></div>
-    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/about4/600/400"></div></div>
+    <div class="case-item"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/about1/600/400"></div></div>
+    <div class="case-item"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/about2/600/400"></div></div>
+    <div class="case-item"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/about3/600/400"></div></div>
+    <div class="case-item"><div class="box" onclick="openPopup(this)"><img src="https://picsum.photos/seed/about4/600/400"></div></div>
   </div>
 </div>
 
@@ -167,11 +172,18 @@ body{background:#1a1a1a;color:#fff}
 
 </div>
 
+<!-- 放大弹窗 -->
+<div class="img-popup" id="popup">
+  <span class="close" onclick="closePopup()">×</span>
+  <img id="popupImg">
+</div>
+
 <div class="footer">
   © 2026 CYGG Studio 版权所有 | 专业游戏美术外包服务商
 </div>
 
 <script>
+// 导航切换
 const navBtns = document.querySelectorAll('.nav-btn');
 const pages = document.querySelectorAll('.page');
 navBtns.forEach(btn=>{
@@ -183,6 +195,7 @@ navBtns.forEach(btn=>{
   })
 })
 
+// 子分类筛选
 const subBtns = document.querySelectorAll('.sub-btn');
 const items = document.querySelectorAll('.case-item');
 subBtns.forEach(btn=>{
@@ -196,7 +209,18 @@ subBtns.forEach(btn=>{
     })
   })
 })
-</script>
 
+// 图片点击放大
+function openPopup(el){
+  document.getElementById('popup').style.display='flex';
+  document.getElementById('popupImg').src = el.querySelector('img').src;
+}
+function closePopup(){
+  document.getElementById('popup').style.display='none';
+}
+document.getElementById('popup').onclick=function(e){
+  if(e.target==this) closePopup();
+}
+</script>
 </body>
 </html>
