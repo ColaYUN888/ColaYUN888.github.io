@@ -20,21 +20,22 @@ img{max-width:100%;vertical-align:middle}
 
 .head-nav{height:70px;background-color:#111}
 .head-nav .inner{width:1200px;margin:0 auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:100%}
-.head-nav .logo{margin-right:50px}
+.head-nav .logo{margin-right:50px;font-size:22px;font-weight:bold}
 .head-nav .nav{display:-webkit-box;display:-ms-flexbox;display:flex;list-style:none}
 .head-nav .nav li{margin-right:40px}
-.head-nav .nav li a{color:#ccc;font-size:14px}
+.head-nav .nav li a{color:#ccc;font-size:16px}
 .head-nav .nav li a:hover{color:#00b7ee}
 
-.subnav{height:40px;background-color:#252525}
+.subnav{height:50px;background-color:#252525}
 .subnav .inner{width:1200px;margin:0 auto}
 .subnav ul{display:-webkit-box;display:-ms-flexbox;display:flex;list-style:none;height:100%;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
-.subnav ul li{margin-right:30px}
-.subnav ul li a{color:#999;font-size:12px}
+.subnav ul li{margin-right:35px}
+.subnav ul li a{color:#999;font-size:18px}
+.subnav ul li a.active{color:#fff;font-weight:bold}
 .subnav ul li a:hover{color:#fff}
 
 .main{width:1200px;margin:0 auto;padding:30px 0}
-.main h2{font-size:18px;margin-bottom:20px;font-weight:400}
+.main h2{font-size:20px;margin-bottom:20px;font-weight:400}
 
 .case-list{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:0 -10px}
 .case-item{width:25%;padding:0 10px;margin-bottom:20px}
@@ -45,9 +46,9 @@ img{max-width:100%;vertical-align:middle}
 .page.active{display:block}
 
 .contact{background-color:#222;padding:30px;margin-top:20px;border-radius:2px}
-.contact p{margin-bottom:10px;color:#ccc}
+.contact p{margin-bottom:10px;color:#ccc;font-size:16px}
 
-.footer{background-color:#000;padding:30px 0;text-align:center;color:#666;font-size:12px;margin-top:30px}
+.footer{background-color:#000;padding:30px 0;text-align:center;color:#666;font-size:14px;margin-top:30px}
 </style>
 </head>
 <body>
@@ -68,7 +69,7 @@ img{max-width:100%;vertical-align:middle}
 
   <div class="head-nav">
     <div class="inner">
-      <div class="logo" style="font-size:20px;font-weight:bold">CYGG</div>
+      <div class="logo">CYGG</div>
       <ul class="nav">
         <li><a class="nav-btn active" data-page="home">首页</a></li>
         <li><a class="nav-btn" data-page="game">游戏定制</a></li>
@@ -87,14 +88,14 @@ img{max-width:100%;vertical-align:middle}
   <div class="subnav">
     <div class="inner">
       <ul>
-        <li><a href="#">2D游戏原画</a></li>
-        <li><a href="#">场景原画设计</a></li>
-        <li><a href="#">卡牌插画宣传</a></li>
-        <li><a href="#">写实角色原画</a></li>
-        <li><a href="#">Q版角色原画</a></li>
-        <li><a href="#">原画设定集</a></li>
-        <li><a href="#">UI图标设计</a></li>
-        <li><a href="#">漫画上色</a></li>
+        <li><a class="sub-btn active" data-cat="2d">2D游戏原画</a></li>
+        <li><a class="sub-btn" data-cat="scene">场景原画设计</a></li>
+        <li><a class="sub-btn" data-cat="card">卡牌插画宣传</a></li>
+        <li><a class="sub-btn" data-cat="real">写实角色原画</a></li>
+        <li><a class="sub-btn" data-cat="q">Q版角色原画</a></li>
+        <li><a class="sub-btn" data-cat="set">原画设定集</a></li>
+        <li><a class="sub-btn" data-cat="ui">UI图标设计</a></li>
+        <li><a class="sub-btn" data-cat="color">漫画上色</a></li>
       </ul>
     </div>
   </div>
@@ -104,14 +105,14 @@ img{max-width:100%;vertical-align:middle}
   <div id="home" class="page active">
     <h2>精品案例</h2>
     <div class="case-list">
-      <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/c1/600/400"></div></div>
-      <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/c2/600/400"></div></div>
-      <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/c3/600/400"></div></div>
-      <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/c4/600/400"></div></div>
-      <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/c5/600/400"></div></div>
-      <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/c6/600/400"></div></div>
-      <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/c7/600/400"></div></div>
-      <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/c8/600/400"></div></div>
+      <div class="case-item" data-cat="2d"><div class="box"><img src="https://picsum.photos/seed/c1/600/400"></div></div>
+      <div class="case-item" data-cat="scene"><div class="box"><img src="https://picsum.photos/seed/c2/600/400"></div></div>
+      <div class="case-item" data-cat="card"><div class="box"><img src="https://picsum.photos/seed/c3/600/400"></div></div>
+      <div class="case-item" data-cat="real"><div class="box"><img src="https://picsum.photos/seed/c4/600/400"></div></div>
+      <div class="case-item" data-cat="q"><div class="box"><img src="https://picsum.photos/seed/c5/600/400"></div></div>
+      <div class="case-item" data-cat="set"><div class="box"><img src="https://picsum.photos/seed/c6/600/400"></div></div>
+      <div class="case-item" data-cat="ui"><div class="box"><img src="https://picsum.photos/seed/c7/600/400"></div></div>
+      <div class="case-item" data-cat="color"><div class="box"><img src="https://picsum.photos/seed/c8/600/400"></div></div>
     </div>
   </div>
 
@@ -141,6 +142,7 @@ img{max-width:100%;vertical-align:middle}
 </div>
 
 <script>
+// 主导航切换
 const btns = document.querySelectorAll('.nav-btn');
 const pages = document.querySelectorAll('.page');
 btns.forEach(btn => {
@@ -149,6 +151,24 @@ btns.forEach(btn => {
     pages.forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(btn.dataset.page).classList.add('active');
+  })
+})
+
+// 子分类切换（你要的图标切换功能）
+const subBtns = document.querySelectorAll('.sub-btn');
+const caseItems = document.querySelectorAll('.case-item');
+subBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    subBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const target = btn.dataset.cat;
+    caseItems.forEach(item => {
+      if(item.dataset.cat === target || target === 'all'){
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    })
   })
 })
 </script>
