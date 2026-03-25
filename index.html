@@ -15,7 +15,6 @@ body{background:#1a1a1a;color:#fff}
 .lang a{margin-left:10px;color:#999;text-decoration:none}
 .lang a:hover{color:#fff}
 
-/* 公司名 80px 居中 */
 .logo-big{
   text-align:center;
   background:#111;
@@ -28,7 +27,6 @@ body{background:#1a1a1a;color:#fff}
 .head-nav{height:80px;background:#111}
 .head-nav .inner{display:flex;align-items:center;height:100%;justify-content:center}
 .nav{display:flex;list-style:none;gap:35px;padding:0}
-/* 导航字体 30px */
 .nav li a{color:#ccc;font-size:30px;text-decoration:none;white-space:nowrap}
 .nav li a:hover{color:#00b7ee}
 
@@ -42,6 +40,7 @@ body{background:#1a1a1a;color:#fff}
 
 .main{width:1200px;margin:0 auto;padding:30px 0}
 .main h2{font-size:22px;margin-bottom:20px;text-align:center}
+.desc{text-align:center;color:#ccc;font-size:16px;line-height:1.8;margin:20px 0;max-width:900px;margin-left:auto;margin-right:auto}
 
 .case-list{display:flex;flex-wrap:wrap;margin:0 -10px}
 .case-item{width:25%;padding:0 10px;margin-bottom:20px}
@@ -73,10 +72,8 @@ body{background:#1a1a1a;color:#fff}
   </div>
 </div>
 
-<!-- 公司名 80px 居中 -->
 <div class="logo-big">CYGG</div>
 
-<!-- 主导航：已删除 3D模型 -->
 <div class="head-nav">
   <div class="inner">
     <ul class="nav">
@@ -88,7 +85,6 @@ body{background:#1a1a1a;color:#fff}
   </div>
 </div>
 
-<!-- 子导航：已添加 3D模型 -->
 <div class="subnav">
   <div class="inner">
     <ul>
@@ -104,47 +100,54 @@ body{background:#1a1a1a;color:#fff}
 
 <div class="main">
 
-<!-- 首页：10张图 -->
+<!-- 首页：公司环境 + 团队 + 工作照片 + 文案 -->
 <div id="home" class="page active">
-  <h2>精品作品</h2>
+  <h2>欢迎来到 CYGG 游戏美术工作室</h2>
+  <p class="desc">我们是一支专注于游戏美术制作的专业团队，提供原画设计、3D建模、UI界面、卡牌插画等一站式美术外包服务。用心创作每一份作品，用实力满足客户需求！</p>
+  <h3>🏢 工作环境 & 团队风采</h3>
   <div class="case-list">
-    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/home1/600/400"></div></div>
-    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/home2/600/400"></div></div>
-    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/home3/600/400"></div></div>
-    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/home4/600/400"></div></div>
-    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/home5/600/400"></div></div>
-    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/home6/600/400"></div></div>
-    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/home7/600/400"></div></div>
-    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/home8/600/400"></div></div>
-    <div class="case-item" data-cat="scene"><div class="box"><img src="https://picsum.photos/seed/home9/600/400"></div></div>
-    <div class="case-item" data-cat="char"><div class="box"><img src="https://picsum.photos/seed/home10/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/office1/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/office2/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/team1/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/team2/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/work1/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/work2/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/life1/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/life2/600/400"></div></div>
   </div>
 </div>
 
-<!-- 作品展示：10张图（包含3D模型分类） -->
+<!-- 作品展示：全分类专业作品图 -->
 <div id="art" class="page">
   <h2>作品展示</h2>
+  <p class="desc">点击下方分类，查看我们的专业美术作品，涵盖2D原画、3D模型、UI设计等全品类游戏美术资源。</p>
   <div class="case-list">
-    <div class="case-item" data-cat="scene"><div class="box"><img src="https://picsum.photos/seed/art1/600/400"></div></div>
-    <div class="case-item" data-cat="char"><div class="box"><img src="https://picsum.photos/seed/art2/600/400"></div></div>
-    <div class="case-item" data-cat="card"><div class="box"><img src="https://picsum.photos/seed/art3/600/400"></div></div>
-    <div class="case-item" data-cat="ui"><div class="box"><img src="https://picsum.photos/seed/art4/600/400"></div></div>
-    <div class="case-item" data-cat="model"><div class="box"><img src="https://picsum.photos/seed/art5/600/400"></div></div>
-    <div class="case-item" data-cat="scene"><div class="box"><img src="https://picsum.photos/seed/art6/600/400"></div></div>
-    <div class="case-item" data-cat="char"><div class="box"><img src="https://picsum.photos/seed/art7/600/400"></div></div>
-    <div class="case-item" data-cat="card"><div class="box"><img src="https://picsum.photos/seed/art8/600/400"></div></div>
-    <div class="case-item" data-cat="ui"><div class="box"><img src="https://picsum.photos/seed/art9/600/400"></div></div>
-    <div class="case-item" data-cat="model"><div class="box"><img src="https://picsum.photos/seed/art10/600/400"></div></div>
+    <div class="case-item" data-cat="scene"><div class="box"><img src="https://picsum.photos/seed/scene1/600/400"></div></div>
+    <div class="case-item" data-cat="scene"><div class="box"><img src="https://picsum.photos/seed/scene2/600/400"></div></div>
+    <div class="case-item" data-cat="scene"><div class="box"><img src="https://picsum.photos/seed/scene3/600/400"></div></div>
+    <div class="case-item" data-cat="char"><div class="box"><img src="https://picsum.photos/seed/char1/600/400"></div></div>
+    <div class="case-item" data-cat="char"><div class="box"><img src="https://picsum.photos/seed/char2/600/400"></div></div>
+    <div class="case-item" data-cat="card"><div class="box"><img src="https://picsum.photos/seed/card1/600/400"></div></div>
+    <div class="case-item" data-cat="card"><div class="box"><img src="https://picsum.photos/seed/card2/600/400"></div></div>
+    <div class="case-item" data-cat="ui"><div class="box"><img src="https://picsum.photos/seed/ui1/600/400"></div></div>
+    <div class="case-item" data-cat="ui"><div class="box"><img src="https://picsum.photos/seed/ui2/600/400"></div></div>
+    <div class="case-item" data-cat="model"><div class="box"><img src="https://picsum.photos/seed/model1/600/400"></div></div>
+    <div class="case-item" data-cat="model"><div class="box"><img src="https://picsum.photos/seed/model2/600/400"></div></div>
+    <div class="case-item" data-cat="model"><div class="box"><img src="https://picsum.photos/seed/model3/600/400"></div></div>
   </div>
 </div>
 
 <!-- 关于我们 -->
 <div id="about" class="page">
-  <h2>关于我们</h2>
-  <div style="padding:20px;font-size:16px;line-height:2;color:#ccc;text-align:center">
-    <p>CYGG 是专业游戏美术外包团队，提供原画、3D建模、UI设计等全流程服务。</p>
-    <br>
-    <p>团队拥有多年项目经验，品质保障、交付准时。</p>
+  <h2>关于 CYGG</h2>
+  <p class="desc">CYGG 工作室成立于2020年，专注游戏美术制作，拥有多年行业经验。<br>
+  团队成员均来自一线游戏公司，擅长各类风格美术创作，服务客户遍布全国。<br>
+  我们坚持高品质、高效率、诚信合作，致力于成为您最信赖的美术外包合作伙伴。</p>
+  <div class="case-list">
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/about1/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/about2/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/about3/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/about4/600/400"></div></div>
   </div>
 </div>
 
@@ -154,9 +157,11 @@ body{background:#1a1a1a;color:#fff}
   <div class="contact">
     <p>📩 邮箱：madongyi@skylinegamefz.com</p>
     <p>🌐 官网：www.skylinegamefz.com</p>
-    <p>📱 微信：Cygg-Cola</p>
+    <p>📱 微信：Cygg_Studio</p>
     <p>🐧 QQ：3794434904</p>
-    <p>承接：整包 / 散单 / 长期合作 / 项目驻场</p>
+    <p>📍 地址：中国 游戏美术创意产业园</p>
+    <p>🎯 承接：整包 / 散单 / 长期合作 / 项目驻场</p>
+    <p>⏰ 响应时间：工作日 10:00 - 22:00</p>
   </div>
 </div>
 
