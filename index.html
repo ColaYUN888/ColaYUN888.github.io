@@ -1,89 +1,69 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>灵龙艺游 - 游戏美术定制</title>
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:Microsoft YaHei,sans-serif}
-    body{background:#f9f9f9;color:#333}
-    .container{max-width:1300px;margin:0 auto;padding:0 15px}
-    header{background:#fff;box-shadow:0 0 5px rgba(0,0,0,.05);padding:15px 0;position:sticky;top:0;z-index:99}
-    .header-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-    .logo{font-size:26px;font-weight:700;color:#d81e06}
-    .lang{font-size:14px;color:#666}
-    .lang a{color:#666;text-decoration:none;margin:0 5px}
-    .lang a:hover{color:#d81e06}
-    nav{width:100%;margin-top:15px;border-top:1px solid #eee;padding-top:10px}
-    nav ul{display:flex;list-style:none;flex-wrap:wrap;gap:25px}
-    nav a{text-decoration:none;color:#333;font-size:15px;padding:5px 0}
-    nav a.active,nav a:hover{color:#d81e06;font-weight:700}
-    .breadcrumb{background:#fff;padding:12px 20px;margin:20px 0;border-radius:4px;color:#666;font-size:14px}
-    .breadcrumb a{color:#666;text-decoration:none}
-    .breadcrumb a:hover{color:#d81e06}
-    .main{display:flex;gap:30px;margin-bottom:40px;flex-wrap:wrap}
-    .sidebar{width:220px;background:#fff;padding:20px;border-radius:4px;height:fit-content}
-    .sidebar h3{font-size:16px;margin-bottom:15px;padding-bottom:10px;border-bottom:1px solid #eee;color:#d81e06}
-    .sidebar ul{list-style:none}
-    .sidebar li{margin:10px 0}
-    .sidebar a{text-decoration:none;color:#333;font-size:14px;display:block;padding:6px 10px;border-radius:3px}
-    .sidebar a:hover,.sidebar a.active{background:#f5f5f5;color:#d81e06}
-    .content{flex:1;min-width:300px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
-    .work-item{background:#fff;border-radius:4px;overflow:hidden;transition:.3s}
-    .work-item:hover{transform:translateY(-5px);box-shadow:0 5px 15px rgba(0,0,0,.1)}
-    .work-item img{width:100%;height:160px;object-fit:cover;display:block}
-    .work-title{padding:10px;font-size:14px;text-align:center}
-    footer{background:#333;color:#fff;text-align:center;padding:20px;font-size:14px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYGG - 专业游戏美术外包</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family: "Microsoft YaHei",Arial,sans-serif}
+        body{background:#f4f6f8;color:#333;line-height:1.8}
+        header{background:#1a2b48;color:white;padding:40px 20px;text-align:center}
+        header h1{font-size:28px;margin-bottom:10px}
+        header p{font-size:16px;opacity:0.9}
+        .container{max-width:900px;margin:0 auto;padding:40px 20px}
+        .box{background:white;border-radius:14px;padding:30px;margin-bottom:25px;box-shadow:0 4px 12px rgba(0,0,0,0.06)}
+        .box h2{font-size:22px;color:#1a2b48;margin-bottom:20px;border-left:5px solid #3e9cdc;padding-left:12px}
+        .tag{display:inline-block;background:#eef5ff;color:#2980b9;padding:6px 12px;border-radius:8px;margin:6px 6px 0 0;font-size:15px}
+        .info p{font-size:16px;color:#444;margin-bottom:12px}
+        .contact{text-align:center;padding:40px 20px;background:#ebf5ff;border-radius:14px}
+        .contact h2{margin-bottom:25px}
+        .contact p{font-size:17px;margin:10px 0;color:#222}
+        .contact strong{color:#c0392b}
+        footer{text-align:center;padding:30px;color:#888;font-size:14px}
+        a{color:#3498db;text-decoration:none;font-weight:bold}
+    </style>
 </head>
 <body>
 <header>
-  <div class="container header-inner">
-    <div class="logo">灵龙艺游</div>
-    <div class="lang"><a href="#">中文</a> | <a href="#">English</a> | <a href="#">日本語</a></div>
-    <nav>
-      <ul>
-        <li><a href="#">首页</a></li>
-        <li><a href="#">游戏定制</a></li>
-        <li><a href="#">虚拟人/元宇宙</a></li>
-        <li><a href="#" class="active">原画</a></li>
-        <li><a href="#">3D模型</a></li>
-        <li><a href="#">2D3D动效</a></li>
-        <li><a href="#">视频制作</a></li>
-        <li><a href="#">联系我们</a></li>
-        <li><a href="#">关于我们</a></li>
-      </ul>
-    </nav>
-  </div>
+    <h1>CYGG 美术工作室</h1>
+    <p>专注游戏美术外包 | 长期接单 | 稳定交付</p>
 </header>
 <div class="container">
-  <div class="breadcrumb">当前位置：<a href="#">首页</a> &gt; <a href="#">原画</a> &gt; 场景原画设计</div>
-  <div class="main">
-    <aside class="sidebar">
-      <h3>作品分类</h3>
-      <ul>
-        <li><a href="#">2D游戏原画</a></li>
-        <li><a href="#" class="active">场景原画设计</a></li>
-        <li><a href="#">卡牌插画宣传</a></li>
-        <li><a href="#">写实角色原画</a></li>
-        <li><a href="#">Q版角色原画</a></li>
-        <li><a href="#">原画设定集</a></li>
-        <li><a href="#">UI图标设计</a></li>
-        <li><a href="#">漫画上色</a></li>
-      </ul>
-    </aside>
-    <div class="content">
-      <div class="work-item"><img src="https://picsum.photos/400/300?random=1" alt="作品"><div class="work-title">场景原画 01</div></div>
-      <div class="work-item"><img src="https://picsum.photos/400/300?random=2" alt="作品"><div class="work-title">场景原画 02</div></div>
-      <div class="work-item"><img src="https://picsum.photos/400/300?random=3" alt="作品"><div class="work-title">场景原画 03</div></div>
-      <div class="work-item"><img src="https://picsum.photos/400/300?random=4" alt="作品"><div class="work-title">场景原画 04</div></div>
-      <div class="work-item"><img src="https://picsum.photos/400/300?random=5" alt="作品"><div class="work-title">场景原画 05</div></div>
-      <div class="work-item"><img src="https://picsum.photos/400/300?random=6" alt="作品"><div class="work-title">场景原画 06</div></div>
-      <div class="work-item"><img src="https://picsum.photos/400/300?random=7" alt="作品"><div class="work-title">场景原画 07</div></div>
-      <div class="work-item"><img src="https://picsum.photos/400/300?random=8" alt="作品"><div class="work-title">场景原画 08</div></div>
+    <div class="box">
+        <h2>可接项目范围</h2>
+        <span class="tag">游戏原画</span>
+        <span class="tag">角色设计</span>
+        <span class="tag">场景原画</span>
+        <span class="tag">美宣插画</span>
+        <span class="tag">UI设计</span>
+        <span class="tag">3D建模</span>
+        <span class="tag">二次元</span>
+        <span class="tag">Q版</span>
+        <span class="tag">立绘</span>
+        <span class="tag">头像</span>
     </div>
-  </div>
+    <div class="box">
+        <h2>作品展示</h2>
+        <p>👉 点击查看作品合集：<a href="https://www.yuanshen.com/" target="_blank">作品链接</a></p>
+        <p style="margin-top:10px;">支持各类游戏美术定制，长期合作优先</p>
+    </div>
+    <div class="box info">
+        <h2>服务优势</h2>
+        <p>✅ 专职美术，长期稳定接单</p>
+        <p>✅ 按时交付，改稿耐心，沟通顺畅</p>
+        <p>✅ 支持个人、工作室、公司长期合作</p>
+        <p>✅ 价格合理，可走简易合作协议</p>
+        <p>✅ 作品版权可按需求协商</p>
+    </div>
+    <div class="contact">
+        <h2>📩 联系我（直接发包）</h2>
+        <p>📱 微信：<strong>Cygg-Cola</strong></p>
+        <p>🐧 QQ：<strong>3794434904</strong></p>
+        <p>🎨 承接：散单 / 整包 / 长期合作</p>
+    </div>
 </div>
-<footer><p>© 2026 灵龙艺游 版权所有</p></footer>
+<footer>
+    © 2026 CYGG 美术 - 专业游戏美术外包服务
+</footer>
 </body>
 </html>
