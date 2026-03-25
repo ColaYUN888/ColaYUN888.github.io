@@ -10,7 +10,7 @@
         
         /* 导航栏 */
         nav{background:#2d2d2d;padding:15px 20px;display:flex;gap:30px;align-items:center;justify-content:center;flex-wrap:wrap;}
-        nav a{color:#ccc;text-decoration:none;font-size:16px;padding:8px 12px;}
+        nav a{color:#ccc;text-decoration:none;font-size:16px;padding:8px 12px;cursor:pointer;}
         nav a.active{color:#00d8ff;border-bottom:2px solid #00d8ff;}
         nav a:hover{color:#00d8ff;}
 
@@ -42,119 +42,217 @@
         }
         .portfolio-item:hover{opacity:0.85;}
 
-        /* 联系我们模块 */
-        .contact{
-            background:#2d2d2d;
-            padding:30px;
-            text-align:center;
-            margin:0 20px 40px;
-            border-radius:8px;
+        /* 页面模块（默认隐藏，通过导航切换） */
+        .page{display:none;}
+        .page.active{display:block;}
+
+        /* 通用模块样式 */
+        .module{
+            max-width:900px;
+            margin:40px auto;
+            padding:0 20px;
         }
-        .contact h2{margin-bottom:20px;color:#00d8ff;}
-        .contact p{font-size:17px;margin:10px 0;color:#ccc;}
-        .contact strong{color:#fff;}
+        .module h2{
+            color:#00d8ff;
+            margin-bottom:20px;
+            font-size:24px;
+        }
+        .module p{
+            color:#ccc;
+            font-size:16px;
+            line-height:1.8;
+            margin-bottom:15px;
+        }
+        .module ul{
+            color:#ccc;
+            font-size:16px;
+            line-height:1.8;
+            padding-left:20px;
+        }
+
+        /* 联系我们模块 */
+        .contact-card{
+            background:#2d2d2d;
+            padding:35px;
+            text-align:center;
+            margin:40px auto;
+            border-radius:12px;
+            max-width:600px;
+        }
+        .contact-card h2{
+            color:#00d8ff;
+            margin-bottom:25px;
+            font-size:26px;
+        }
+        .contact-card p{
+            font-size:18px;
+            margin:12px 0;
+            color:#eee;
+        }
+        .contact-card strong{
+            color:#fff;
+            font-weight:bold;
+        }
 
         /* 页脚 */
-        footer{text-align:center;padding:20px;color:#666;font-size:14px;}
+        footer{text-align:center;padding:25px;color:#666;font-size:14px;}
     </style>
 </head>
 <body>
     <!-- 顶部导航栏 -->
     <nav>
-        <a href="#">首页</a>
-        <a href="#">关于我们</a>
-        <a href="#">我们团队</a>
-        <a href="#">我们优势</a>
-        <a href="#" class="active">作品展示</a>
-        <a href="#">合作伙伴</a>
-        <a href="#">联系我们</a>
+        <a class="nav-link active" data-page="home">首页</a>
+        <a class="nav-link" data-page="about">关于我们</a>
+        <a class="nav-link" data-page="team">我们团队</a>
+        <a class="nav-link" data-page="strength">我们优势</a>
+        <a class="nav-link" data-page="case">作品展示</a>
+        <a class="nav-link" data-page="partner">合作伙伴</a>
+        <a class="nav-link" data-page="contact">联系我们</a>
     </nav>
 
-    <!-- 作品分类标签 -->
-    <div class="category">
-        <a class="cat active" data-cat="scene">场景原画</a>
-        <a class="cat" data-cat="char">角色原画</a>
-        <a class="cat" data-cat="prop">装备道具</a>
-        <a class="cat" data-cat="promo">美术宣传</a>
+    <!-- 首页模块 -->
+    <div id="home" class="page active module">
+        <h2>欢迎来到 CYGG 美术工作室</h2>
+        <p>我们是专注于**游戏美术全流程外包**的专业团队，为全球游戏开发者提供高品质美术解决方案。</p>
+        <p>从概念原画到3D建模，从UI交互到美宣插画，我们用专业能力助力你的游戏项目脱颖而出。</p>
     </div>
 
-    <!-- 作品展示墙 -->
-    <div class="portfolio-grid">
-        <!-- 场景原画 -->
-        <div class="portfolio-item active" data-cat="scene">
-            <img src="https://picsum.photos/seed/scene1/600/350.jpg" alt="场景原画01">
-        </div>
-        <div class="portfolio-item active" data-cat="scene">
-            <img src="https://picsum.photos/seed/scene2/600/350.jpg" alt="场景原画02">
-        </div>
-        <div class="portfolio-item active" data-cat="scene">
-            <img src="https://picsum.photos/seed/scene3/600/350.jpg" alt="场景原画03">
-        </div>
-        <div class="portfolio-item active" data-cat="scene">
-            <img src="https://picsum.photos/seed/scene4/600/350.jpg" alt="场景原画04">
-        </div>
-        <div class="portfolio-item active" data-cat="scene">
-            <img src="https://picsum.photos/seed/scene5/600/350.jpg" alt="场景原画05">
-        </div>
-        <div class="portfolio-item active" data-cat="scene">
-            <img src="https://picsum.photos/seed/scene6/600/350.jpg" alt="场景原画06">
-        </div>
-        <div class="portfolio-item active" data-cat="scene">
-            <img src="https://picsum.photos/seed/scene7/600/350.jpg" alt="场景原画07">
-        </div>
-        <div class="portfolio-item active" data-cat="scene">
-            <img src="https://picsum.photos/seed/scene8/600/350.jpg" alt="场景原画08">
+    <!-- 关于我们模块 -->
+    <div id="about" class="page module">
+        <h2>关于我们</h2>
+        <p>CYGG 美术工作室成立于2026年，核心成员均来自一线游戏研发公司，拥有5年以上项目经验。</p>
+        <p>我们深耕游戏美术领域，擅长二次元、写实、科幻、Q版等多种风格，已为数十款上线游戏提供美术服务。</p>
+        <p>我们坚持「诚信交付、品质优先」的理念，与客户建立长期稳定的合作关系。</p>
+    </div>
+
+    <!-- 我们团队模块 -->
+    <div id="team" class="page module">
+        <h2>我们团队</h2>
+        <p>团队由原画设计师、3D建模师、UI设计师、插画师组成，覆盖游戏美术全流程：</p>
+        <ul>
+            <li>角色/场景原画组：擅长世界观构建与视觉叙事</li>
+            <li>3D建模组：精通次世代、手绘、低模等多种制作流程</li>
+            <li>UI/交互组：打造符合游戏调性的界面体验</li>
+            <li>美宣组：负责宣传图、立绘、海报等视觉包装</li>
+        </ul>
+        <p>我们是高效协作的小而美团队，响应快、改稿灵活、沟通顺畅。</p>
+    </div>
+
+    <!-- 我们优势模块 -->
+    <div id="strength" class="page module">
+        <h2>我们优势</h2>
+        <p>✅ 专职美术团队：全职接单，稳定交付，拒绝兼职拖延</p>
+        <p>✅ 全流程服务：从概念到成品，一站式解决美术需求</p>
+        <p>✅ 风格全覆盖：二次元/写实/科幻/Q版/国风均有成熟案例</p>
+        <p>✅ 灵活合作：支持散单、整包、长期驻场等多种模式</p>
+        <p>✅ 价格透明：按需报价，无隐形消费，可走简易合作协议</p>
+        <p>✅ 售后保障：免费小改，重大问题可协商调整，保障甲方权益</p>
+    </div>
+
+    <!-- 作品展示模块 -->
+    <div id="case" class="page active">
+        <!-- 作品分类标签 -->
+        <div class="category">
+            <a class="cat active" data-cat="scene">场景原画</a>
+            <a class="cat" data-cat="char">角色原画</a>
+            <a class="cat" data-cat="prop">装备道具</a>
+            <a class="cat" data-cat="promo">美术宣传</a>
         </div>
 
-        <!-- 角色原画 -->
-        <div class="portfolio-item" data-cat="char">
-            <img src="https://picsum.photos/seed/char1/600/350.jpg" alt="角色原画01">
-        </div>
-        <div class="portfolio-item" data-cat="char">
-            <img src="https://picsum.photos/seed/char2/600/350.jpg" alt="角色原画02">
-        </div>
-        <div class="portfolio-item" data-cat="char">
-            <img src="https://picsum.photos/seed/char3/600/350.jpg" alt="角色原画03">
-        </div>
-        <div class="portfolio-item" data-cat="char">
-            <img src="https://picsum.photos/seed/char4/600/350.jpg" alt="角色原画04">
-        </div>
+        <!-- 作品展示墙 -->
+        <div class="portfolio-grid">
+            <!-- 场景原画 -->
+            <div class="portfolio-item active" data-cat="scene">
+                <img src="https://picsum.photos/seed/scene1/600/350.jpg" alt="场景原画01">
+            </div>
+            <div class="portfolio-item active" data-cat="scene">
+                <img src="https://picsum.photos/seed/scene2/600/350.jpg" alt="场景原画02">
+            </div>
+            <div class="portfolio-item active" data-cat="scene">
+                <img src="https://picsum.photos/seed/scene3/600/350.jpg" alt="场景原画03">
+            </div>
+            <div class="portfolio-item active" data-cat="scene">
+                <img src="https://picsum.photos/seed/scene4/600/350.jpg" alt="场景原画04">
+            </div>
+            <div class="portfolio-item active" data-cat="scene">
+                <img src="https://picsum.photos/seed/scene5/600/350.jpg" alt="场景原画05">
+            </div>
+            <div class="portfolio-item active" data-cat="scene">
+                <img src="https://picsum.photos/seed/scene6/600/350.jpg" alt="场景原画06">
+            </div>
+            <div class="portfolio-item active" data-cat="scene">
+                <img src="https://picsum.photos/seed/scene7/600/350.jpg" alt="场景原画07">
+            </div>
+            <div class="portfolio-item active" data-cat="scene">
+                <img src="https://picsum.photos/seed/scene8/600/350.jpg" alt="场景原画08">
+            </div>
 
-        <!-- 装备道具 -->
-        <div class="portfolio-item" data-cat="prop">
-            <img src="https://picsum.photos/seed/prop1/600/350.jpg" alt="装备道具01">
-        </div>
-        <div class="portfolio-item" data-cat="prop">
-            <img src="https://picsum.photos/seed/prop2/600/350.jpg" alt="装备道具02">
-        </div>
-        <div class="portfolio-item" data-cat="prop">
-            <img src="https://picsum.photos/seed/prop3/600/350.jpg" alt="装备道具03">
-        </div>
-        <div class="portfolio-item" data-cat="prop">
-            <img src="https://picsum.photos/seed/prop4/600/350.jpg" alt="装备道具04">
-        </div>
+            <!-- 角色原画 -->
+            <div class="portfolio-item" data-cat="char">
+                <img src="https://picsum.photos/seed/char1/600/350.jpg" alt="角色原画01">
+            </div>
+            <div class="portfolio-item" data-cat="char">
+                <img src="https://picsum.photos/seed/char2/600/350.jpg" alt="角色原画02">
+            </div>
+            <div class="portfolio-item" data-cat="char">
+                <img src="https://picsum.photos/seed/char3/600/350.jpg" alt="角色原画03">
+            </div>
+            <div class="portfolio-item" data-cat="char">
+                <img src="https://picsum.photos/seed/char4/600/350.jpg" alt="角色原画04">
+            </div>
 
-        <!-- 美术宣传 -->
-        <div class="portfolio-item" data-cat="promo">
-            <img src="https://picsum.photos/seed/promo1/600/350.jpg" alt="美术宣传01">
-        </div>
-        <div class="portfolio-item" data-cat="promo">
-            <img src="https://picsum.photos/seed/promo2/600/350.jpg" alt="美术宣传02">
-        </div>
-        <div class="portfolio-item" data-cat="promo">
-            <img src="https://picsum.photos/seed/promo3/600/350.jpg" alt="美术宣传03">
-        </div>
-        <div class="portfolio-item" data-cat="promo">
-            <img src="https://picsum.photos/seed/promo4/600/350.jpg" alt="美术宣传04">
+            <!-- 装备道具 -->
+            <div class="portfolio-item" data-cat="prop">
+                <img src="https://picsum.photos/seed/prop1/600/350.jpg" alt="装备道具01">
+            </div>
+            <div class="portfolio-item" data-cat="prop">
+                <img src="https://picsum.photos/seed/prop2/600/350.jpg" alt="装备道具02">
+            </div>
+            <div class="portfolio-item" data-cat="prop">
+                <img src="https://picsum.photos/seed/prop3/600/350.jpg" alt="装备道具03">
+            </div>
+            <div class="portfolio-item" data-cat="prop">
+                <img src="https://picsum.photos/seed/prop4/600/350.jpg" alt="装备道具04">
+            </div>
+
+            <!-- 美术宣传 -->
+            <div class="portfolio-item" data-cat="promo">
+                <img src="https://picsum.photos/seed/promo1/600/350.jpg" alt="美术宣传01">
+            </div>
+            <div class="portfolio-item" data-cat="promo">
+                <img src="https://picsum.photos/seed/promo2/600/350.jpg" alt="美术宣传02">
+            </div>
+            <div class="portfolio-item" data-cat="promo">
+                <img src="https://picsum.photos/seed/promo3/600/350.jpg" alt="美术宣传03">
+            </div>
+            <div class="portfolio-item" data-cat="promo">
+                <img src="https://picsum.photos/seed/promo4/600/350.jpg" alt="美术宣传04">
+            </div>
         </div>
     </div>
 
-    <!-- 联系我们模块 -->
-    <div class="contact">
-        <h2>📩 联系我们（直接发包）</h2>
-        <p>📱 微信：<strong>Cygg-Cola</strong></p>
-        <p>🐧 QQ：<strong>3794434904</strong></p>
-        <p>🎨 承接：散单 / 整包 / 长期合作</p>
+    <!-- 合作伙伴模块 -->
+    <div id="partner" class="page module">
+        <h2>合作伙伴</h2>
+        <p>我们已与多家知名游戏公司、独立工作室、发行平台建立长期合作：</p>
+        <ul>
+            <li>手游/端游研发团队</li>
+            <li>独立游戏工作室</li>
+            <li>VR/AR内容制作公司</li>
+            <li>游戏发行与平台方</li>
+        </ul>
+        <p>我们重视每一位合作伙伴，以专业能力和诚信态度共同打造精品游戏。</p>
+    </div>
+
+    <!-- 联系我们模块（含联系方式） -->
+    <div id="contact" class="page module">
+        <div class="contact-card">
+            <h2>📩 联系我们（直接发包）</h2>
+            <p>📱 微信：<strong>Cygg-Cola</strong></p>
+            <p>🐧 QQ：<strong>3794434904</strong></p>
+            <p>🎨 承接范围：散单 / 整包 / 长期合作 / 驻场支持</p>
+            <p>⏰ 响应时间：工作日 1 小时内回复，非工作日 24 小时内回复</p>
+        </div>
     </div>
 
     <!-- 页脚 -->
@@ -162,8 +260,24 @@
         © 2026 CYGG 美术工作室 - 专业游戏美术外包服务
     </footer>
 
-    <!-- 分类切换JS -->
     <script>
+        // 导航栏切换页面逻辑
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pages = document.querySelectorAll('.page');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                
+                const targetPage = link.dataset.page;
+                pages.forEach(page => {
+                    page.classList.toggle('active', page.id === targetPage);
+                });
+            });
+        });
+
+        // 作品分类切换逻辑
         const cats = document.querySelectorAll('.cat');
         const items = document.querySelectorAll('.portfolio-item');
         
