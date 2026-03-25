@@ -5,159 +5,219 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CYGG - 专业游戏美术外包</title>
 <style>
-*{margin:0;padding:0;-webkit-box-sizing:border-box;box-sizing:border-box;font-family:"Microsoft YaHei",Arial,sans-serif}
-body{background-color:#1a1a1a;color:#fff;font-size:14px;line-height:1.6}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;vertical-align:middle}
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Microsoft YaHei",Arial,sans-serif}
+body{background:#1a1a1a;color:#fff}
 
-.head-bak{position:relative;z-index:10}
-.head-top{height:34px;background-color:#000;line-height:34px;font-size:12px;color:#999}
-.head-top .inner{width:1200px;margin:0 auto}
-.head-top .fr{float:right}
-.head-top .lang{margin-left:20px}
-.head-top .lang a{margin-left:10px}
-.head-top .lang a:hover{color:#fff}
+.head-top{height:34px;background:#000;line-height:34px;font-size:12px;color:#999}
+.inner{width:1200px;margin:0 auto}
+.fr{float:right}
+.lang{margin-left:20px}
+.lang a{margin-left:10px;color:#999;text-decoration:none}
+.lang a:hover{color:#fff}
 
-.head-nav{height:70px;background-color:#111}
-.head-nav .inner{width:1200px;margin:0 auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:100%}
-.head-nav .logo{margin-right:50px;font-size:22px;font-weight:bold}
-.head-nav .nav{display:-webkit-box;display:-ms-flexbox;display:flex;list-style:none}
-.head-nav .nav li{margin-right:40px}
+.head-nav{height:80px;background:#111}
+.head-nav .inner{display:flex;align-items:center;height:100%;gap:20px}
+.logo{font-size:26px;font-weight:bold;color:#fff}
+/* 横排主导航 + 不换行 + 间距正常 */
+.nav{display:flex;list-style:none;align-items:center;flex-wrap:nowrap;width:100%}
+.nav li{margin-right:28px;white-space:nowrap}
 /* 主导航 26px */
-.head-nav .nav li a{color:#ccc;font-size:26px}
-.head-nav .nav li a:hover{color:#00b7ee}
+.nav li a{color:#ccc;font-size:26px;text-decoration:none}
+.nav li a:hover{color:#00b7ee}
 
-.subnav{height:50px;background-color:#252525}
-.subnav .inner{width:1200px;margin:0 auto}
-.subnav ul{display:-webkit-box;display:-ms-flexbox;display:flex;list-style:none;height:100%;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.subnav{height:50px;background:#252525}
+.subnav .inner{height:100%}
+.subnav ul{display:flex;list-style:none;height:100%;align-items:center}
 .subnav ul li{margin-right:35px}
 /* 子分类 20px */
-.subnav ul li a{color:#999;font-size:20px}
+.subnav ul li a{color:#999;font-size:20px;text-decoration:none}
 .subnav ul li a.active{color:#fff;font-weight:bold}
 .subnav ul li a:hover{color:#fff}
 
 .main{width:1200px;margin:0 auto;padding:30px 0}
-.main h2{font-size:20px;margin-bottom:20px;font-weight:400}
+.main h2{font-size:22px;margin-bottom:20px}
 
-.case-list{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:0 -10px}
+/* 4列网格 */
+.case-list{display:flex;flex-wrap:wrap;margin:0 -10px}
 .case-item{width:25%;padding:0 10px;margin-bottom:20px}
-.case-item .box{background-color:#222;border-radius:2px;overflow:hidden}
-.case-item img{width:100%;height:160px;object-fit:cover}
+.case-item .box{background:#222;border-radius:4px;overflow:hidden}
+.case-item img{width:100%;height:180px;object-fit:cover}
 
 .page{display:none}
 .page.active{display:block}
 
-.contact{background-color:#222;padding:30px;margin-top:20px;border-radius:2px}
-.contact p{margin-bottom:10px;color:#ccc;font-size:16px}
+.contact{background:#222;padding:35px;border-radius:6px;margin-top:20px}
+.contact p{margin-bottom:12px;font-size:16px;color:#eee}
 
-.footer{background-color:#000;padding:30px 0;text-align:center;color:#666;font-size:14px;margin-top:30px}
+.footer{background:#000;padding:30px;text-align:center;color:#777;margin-top:30px}
 </style>
 </head>
+
 <body>
 
-<div class="head-bak">
-  <div class="head-top">
-    <div class="inner">
-      <div class="fr">
-        <span>madongyi@skylinegamefz.com</span>
-        <span class="lang">
-          <a href="#">中文</a>
-          <a href="#">English</a>
-          <a href="#">日本語</a>
-        </span>
-      </div>
+<div class="head-top">
+  <div class="inner">
+    <div class="fr">
+      <span>madongyi@skylinegamefz.com</span>
+      <span class="lang">
+        <a href="#">中文</a>
+        <a href="#">English</a>
+        <a href="#">日本語</a>
+      </span>
     </div>
   </div>
+</div>
 
-  <div class="head-nav">
-    <div class="inner">
-      <div class="logo">CYGG</div>
-      <ul class="nav">
-        <li><a class="nav-btn active" data-page="home">首页</a></li>
-        <li><a class="nav-btn" data-page="game">游戏定制</a></li>
-        <li><a class="nav-btn" data-page="virtual">虚拟人</a></li>
-        <li><a class="nav-btn" data-page="yuan">元宇宙</a></li>
-        <li><a class="nav-btn" data-page="art">原画</a></li>
-        <li><a class="nav-btn" data-page="model">3D模型</a></li>
-        <li><a class="nav-btn" data-page="motion">2D3D动效</a></li>
-        <li><a class="nav-btn" data-page="video">视频制作</a></li>
-        <li><a class="nav-btn" data-page="about">关于我们</a></li>
-        <li><a class="nav-btn" data-page="contact">联系我们</a></li>
-      </ul>
-    </div>
+<div class="head-nav">
+  <div class="inner">
+    <div class="logo">CYGG</div>
+    <ul class="nav">
+      <li><a class="nav-btn active" data-page="home">首页</a></li>
+      <li><a class="nav-btn" data-page="art">游戏原画</a></li>
+      <li><a class="nav-btn" data-page="model">3D模型</a></li>
+      <li><a class="nav-btn" data-page="ui">UI设计</a></li>
+      <li><a class="nav-btn" data-page="promo">美宣插画</a></li>
+      <li><a class="nav-btn" data-page="about">关于我们</a></li>
+      <li><a class="nav-btn" data-page="contact">联系我们</a></li>
+    </ul>
   </div>
+</div>
 
-  <div class="subnav">
-    <div class="inner">
-      <ul>
-        <li><a class="sub-btn active" data-cat="all">全部作品</a></li>
-        <li><a class="sub-btn" data-cat="2d">2D游戏原画</a></li>
-        <li><a class="sub-btn" data-cat="scene">场景原画设计</a></li>
-        <li><a class="sub-btn" data-cat="card">卡牌插画宣传</a></li>
-        <li><a class="sub-btn" data-cat="real">写实角色原画</a></li>
-        <li><a class="sub-btn" data-cat="q">Q版角色原画</a></li>
-        <li><a class="sub-btn" data-cat="ui">UI图标设计</a></li>
-      </ul>
-    </div>
+<div class="subnav">
+  <div class="inner">
+    <ul>
+      <li><a class="sub-btn active" data-cat="all">全部</a></li>
+      <li><a class="sub-btn" data-cat="scene">场景原画</a></li>
+      <li><a class="sub-btn" data-cat="char">角色原画</a></li>
+      <li><a class="sub-btn" data-cat="card">卡牌插画</a></li>
+      <li><a class="sub-btn" data-cat="ui">UI图标</a></li>
+    </ul>
   </div>
 </div>
 
 <div class="main">
-  <div id="home" class="page active">
-    <h2>精品案例</h2>
-    <div class="case-list">
-      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game1/600/400"></div></div>
-      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game2/600/400"></div></div>
-      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game3/600/400"></div></div>
-      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game4/600/400"></div></div>
-      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game5/600/400"></div></div>
-      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game6/600/400"></div></div>
-      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game7/600/400"></div></div>
-      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game8/600/400"></div></div>
-      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game9/600/400"></div></div>
-      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game10/600/400"></div></div>
-      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game11/600/400"></div></div>
-      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game12/600/400"></div></div>
-      <div class="case-item" data-cat="scene"><div class="box"><img src="https://picsum.photos/seed/scene1/600/400"></div></div>
-      <div class="case-item" data-cat="scene"><div class="box"><img src="https://picsum.photos/seed/scene2/600/400"></div></div>
-      <div class="case-item" data-cat="scene"><div class="box"><img src="https://picsum.photos/seed/scene3/600/400"></div></div>
-      <div class="case-item" data-cat="scene"><div class="box"><img src="https://picsum.photos/seed/scene4/600/400"></div></div>
-    </div>
-  </div>
 
-  <div id="game" class="page"><h2>游戏定制</h2></div>
-  <div id="virtual" class="page"><h2>虚拟人</h2></div>
-  <div id="yuan" class="page"><h2>元宇宙</h2></div>
-  <div id="art" class="page"><h2>原画</h2></div>
-  <div id="model" class="page"><h2>3D模型</h2></div>
-  <div id="motion" class="page"><h2>2D3D动效</h2></div>
-  <div id="video" class="page"><h2>视频制作</h2></div>
-  <div id="about" class="page"><h2>关于我们</h2></div>
-
-  <div id="contact" class="page">
-    <h2>联系我们</h2>
-    <div class="contact">
-      <p>邮箱：madongyi@skylinegamefz.com</p>
-      <p>官网：www.skylinegamefz.com</p>
-      <p>微信：Cygg-Cola</p>
-      <p>QQ：3794434904</p>
-      <p>承接：整包 / 散单 / 长期合作 / 项目驻场</p>
-    </div>
+<!-- 首页：10张图 -->
+<div id="home" class="page active">
+  <h2>精品作品</h2>
+  <div class="case-list">
+    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/home1/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/home2/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/home3/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/home4/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/home5/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/home6/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/home7/600/400"></div></div>
+    <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/home8/600/400"></div></div>
+    <div class="case-item" data-cat="scene"><div class="box"><img src="https://picsum.photos/seed/home9/600/400"></div></div>
+    <div class="case-item" data-cat="char"><div class="box"><img src="https://picsum.photos/seed/home10/600/400"></div></div>
   </div>
+</div>
+
+<!-- 游戏原画：10张图 -->
+<div id="art" class="page">
+  <h2>游戏原画</h2>
+  <div class="case-list">
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/art1/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/art2/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/art3/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/art4/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/art5/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/art6/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/art7/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/art8/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/art9/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/art10/600/400"></div></div>
+  </div>
+</div>
+
+<!-- 3D模型：10张图 -->
+<div id="model" class="page">
+  <h2>3D模型</h2>
+  <div class="case-list">
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/mod1/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/mod2/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/mod3/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/mod4/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/mod5/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/mod6/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/mod7/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/mod8/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/mod9/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/mod10/600/400"></div></div>
+  </div>
+</div>
+
+<!-- UI设计：10张图 -->
+<div id="ui" class="page">
+  <h2>UI设计</h2>
+  <div class="case-list">
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/ui1/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/ui2/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/ui3/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/ui4/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/ui5/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/ui6/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/ui7/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/ui8/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/ui9/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/ui10/600/400"></div></div>
+  </div>
+</div>
+
+<!-- 美宣插画：10张图 -->
+<div id="promo" class="page">
+  <h2>美宣插画</h2>
+  <div class="case-list">
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/pro1/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/pro2/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/pro3/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/pro4/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/pro5/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/pro6/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/pro7/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/pro8/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/pro9/600/400"></div></div>
+    <div class="case-item"><div class="box"><img src="https://picsum.photos/seed/pro10/600/400"></div></div>
+  </div>
+</div>
+
+<!-- 关于我们 -->
+<div id="about" class="page">
+  <h2>关于我们</h2>
+  <div style="padding:20px;font-size:16px;line-height:2;color:#ccc">
+    <p>CYGG 是专业游戏美术外包团队，提供原画、3D建模、UI设计、美宣插画等全流程服务。</p>
+    <br>
+    <p>团队拥有多年项目经验，服务过多家上市游戏公司，品质保障、交付准时。</p>
+  </div>
+</div>
+
+<!-- 联系我们 -->
+<div id="contact" class="page">
+  <h2>商务合作</h2>
+  <div class="contact">
+    <p>📩 邮箱：madongyi@skylinegamefz.com</p>
+    <p>🌐 官网：www.skylinegamefz.com</p>
+    <p>📱 微信：Cygg-Cola</p>
+    <p>🐧 QQ：3794434904</p>
+    <p>承接：整包 / 散单 / 长期合作 / 项目驻场</p>
+  </div>
+</div>
+
 </div>
 
 <div class="footer">
-  © 2026 CYGG Studio All Rights Reserved. 专业游戏美术外包服务商
+  © 2026 CYGG Studio 版权所有 | 专业游戏美术外包服务商
 </div>
 
 <script>
-// 主导航切换
-const btns = document.querySelectorAll('.nav-btn');
+// 导航切换
+const navBtns = document.querySelectorAll('.nav-btn');
 const pages = document.querySelectorAll('.page');
-btns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    btns.forEach(b => b.classList.remove('active'));
-    pages.forEach(p => p.classList.remove('active'));
+navBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    navBtns.forEach(b=>b.classList.remove('active'));
+    pages.forEach(p=>p.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(btn.dataset.page).classList.add('active');
   })
@@ -165,18 +225,15 @@ btns.forEach(btn => {
 
 // 子分类切换
 const subBtns = document.querySelectorAll('.sub-btn');
-const caseItems = document.querySelectorAll('.case-item');
-subBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    subBtns.forEach(b => b.classList.remove('active'));
+const items = document.querySelectorAll('.case-item');
+subBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    subBtns.forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
-    const target = btn.dataset.cat;
-    caseItems.forEach(item => {
-      if(item.dataset.cat === target || target === 'all'){
-        item.style.display = 'block';
-      } else {
-        item.style.display = 'none';
-      }
+    let t = btn.dataset.cat;
+    items.forEach(i=>{
+      if(t=='all' || i.dataset.cat==t) i.style.display='block';
+      else i.style.display='none';
     })
   })
 })
