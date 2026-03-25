@@ -6,80 +6,93 @@
     <title>CYGG - 专业游戏美术外包</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box;font-family: "Microsoft YaHei",Arial,sans-serif}
-        body{background:#f4f6f8;color:#333;line-height:1.8}
-        header{background:#1a2b48;color:white;padding:40px 20px;text-align:center}
-        header h1{font-size:28px;margin-bottom:10px}
-        .container{max-width:900px;margin:0 auto;padding:40px 20px}
-        .box{background:white;border-radius:14px;padding:30px;margin-bottom:25px;box-shadow:0 4px 12px rgba(0,0,0,0.06)}
-        .box h2{font-size:22px;color:#1a2b48;margin-bottom:20px;border-left:5px solid #3e9cdc;padding-left:12px}
+        body{background:#1e1e1e;color:#fff;}
         
-        .tag{display:inline-block;background:#eef5ff;color:#2980b9;padding:6px 12px;border-radius:8px;margin:6px;font-size:15px}
-        .contact{text-align:center;padding:40px;background:#ebf5ff;border-radius:14px}
-        .contact strong{color:#c0392b}
-        footer{text-align:center;padding:30px;color:#888}
+        /* 导航栏 */
+        nav{background:#2d2d2d;padding:15px 20px;display:flex;gap:30px;align-items:center;justify-content:center;}
+        nav a{color:#ccc;text-decoration:none;font-size:14px;padding:8px 12px;}
+        nav a.active{color:#00d8ff;border-bottom:2px solid #00d8ff;}
+        nav a:hover{color:#00d8ff;}
 
-        /* 作品展示样式 */
-        .portfolio {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-top: 10px;
+        /* 分类标签 */
+        .category{text-align:center;padding:30px 0;}
+        .category a{color:#ccc;text-decoration:none;margin:0 12px;font-size:16px;}
+        .category a.active{color:#fff;font-weight:bold;}
+
+        /* 作品网格 */
+        .portfolio-grid{
+            display:grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap:15px;
+            padding:0 20px 40px;
+            max-width:1400px;
+            margin:0 auto;
         }
-        .portfolio img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        .portfolio-item{
+            background:#2d2d2d;
+            border-radius:4px;
+            overflow:hidden;
         }
+        .portfolio-item img{
+            width:100%;
+            display:block;
+        }
+        .portfolio-item:hover{opacity:0.85;}
+
+        /* 页脚 */
+        footer{text-align:center;padding:20px;color:#666;font-size:12px;}
     </style>
 </head>
 <body>
+    <!-- 导航栏 -->
+    <nav>
+        <a href="#">首页</a>
+        <a href="#">关于我们</a>
+        <a href="#">我们团队</a>
+        <a href="#">我们优势</a>
+        <a href="#" class="active">作品展示</a>
+        <a href="#">合作伙伴</a>
+        <a href="#">联系我们</a>
+    </nav>
 
-<header>
-    <h1>CYGG 美术工作室</h1>
-    <p>专注游戏美术外包 | 长期接单 | 稳定交付</p>
-</header>
-
-<div class="container">
-    <div class="box">
-        <h2>可接项目范围</h2>
-        <span class="tag">游戏原画</span>
-        <span class="tag">角色设计</span>
-        <span class="tag">场景原画</span>
-        <span class="tag">美宣插画</span>
-        <span class="tag">UI设计</span>
-        <span class="tag">3D建模</span>
-        <span class="tag">二次元</span>
-        <span class="tag">Q版</span>
-        <span class="tag">立绘</span>
+    <!-- 作品分类 -->
+    <div class="category">
+        <a href="#" class="active">场景原画</a>
+        <a href="#">角色原画</a>
+        <a href="#">装备道具</a>
+        <a href="#">美术宣传</a>
     </div>
 
-    <!-- ✅ 这里是作品展示 -->
-    <div class="box">
-        <h2>作品展示</h2>
-        <div class="portfolio">
-            <img src="https://picsum.photos/seed/cygg1/400/300.jpg">
-            <img src="https://picsum.photos/seed/cygg2/400/300.jpg">
-            <img src="https://picsum.photos/seed/cygg3/400/300.jpg">
-            <img src="https://picsum.photos/seed/cygg4/400/300.jpg">
+    <!-- 作品展示墙 -->
+    <div class="portfolio-grid">
+        <div class="portfolio-item">
+            <img src="https://picsum.photos/seed/scene1/600/350.jpg" alt="场景原画01">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://picsum.photos/seed/scene2/600/350.jpg" alt="场景原画02">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://picsum.photos/seed/scene3/600/350.jpg" alt="场景原画03">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://picsum.photos/seed/scene4/600/350.jpg" alt="场景原画04">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://picsum.photos/seed/scene5/600/350.jpg" alt="场景原画05">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://picsum.photos/seed/scene6/600/350.jpg" alt="场景原画06">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://picsum.photos/seed/scene7/600/350.jpg" alt="场景原画07">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://picsum.photos/seed/scene8/600/350.jpg" alt="场景原画08">
         </div>
     </div>
 
-    <div class="box">
-        <h2>服务优势</h2>
-        <p>✅ 专职美术，长期稳定接单</p>
-        <p>✅ 按时交付，改稿耐心</p>
-        <p>✅ 支持个人/工作室/公司长期合作</p>
-        <p>✅ 价格合理，可走简易协议</p>
-    </div>
-
-    <div class="contact">
-        <h2>📩 联系我（直接发包）</h2>
-        <p>📱 微信：<strong>Cygg-Cola</strong></p>
-        <p>🐧 QQ：<strong>3794434904</strong></p>
-        <p>🎨 承接：散单 / 整包 / 长期合作</p>
-    </div>
-</div>
-
-<footer>© 2026 CYGG 美术 - 专业游戏美术外包服务</footer>
+    <footer>
+        © 2026 CYGG 美术工作室 - 专业游戏美术外包服务
+    </footer>
 </body>
 </html>
