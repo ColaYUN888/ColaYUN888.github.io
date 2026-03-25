@@ -6,252 +6,249 @@
     <title>CYGG - 专业游戏美术外包</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box;font-family: "Microsoft YaHei",Arial,sans-serif}
-        body{background:#1e1e1e;color:#fff;}
+        body{background:#2b2b2b;color:#fff;}
         
-        /* 导航栏 */
-        nav{background:#2d2d2d;padding:15px 20px;display:flex;gap:30px;align-items:center;justify-content:center;flex-wrap:wrap;}
-        nav a{color:#ccc;text-decoration:none;font-size:16px;padding:8px 12px;cursor:pointer;}
-        nav a.active{color:#00d8ff;border-bottom:2px solid #00d8ff;}
-        nav a:hover{color:#00d8ff;}
+        /* 顶部导航栏 */
+        .top-bar{
+            background:#222;
+            padding:10px 20px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            font-size:14px;
+            color:#aaa;
+        }
+        .top-bar .lang{display:flex;gap:15px;}
+        .top-bar .lang a{color:#aaa;text-decoration:none;}
+        .top-bar .lang a:hover{color:#00d8ff;}
 
-        /* 作品分类 */
-        .category{text-align:center;padding:30px 0;}
-        .category a{color:#ccc;text-decoration:none;margin:0 12px;font-size:18px;cursor:pointer;}
-        .category a.active{color:#fff;font-weight:bold;}
-        .category a:hover{color:#00d8ff;}
+        /* 主导航 */
+        nav{
+            background:#333;
+            padding:20px 20px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:40px;
+            border-bottom:1px solid #444;
+        }
+        nav .logo{
+            font-size:22px;
+            font-weight:bold;
+            color:#fff;
+            margin-right:30px;
+        }
+        nav a{
+            color:#ccc;
+            text-decoration:none;
+            font-size:16px;
+            padding:8px 0;
+            border-bottom:2px solid transparent;
+        }
+        nav a.active{
+            color:#00d8ff;
+            border-bottom:2px solid #00d8ff;
+        }
+        nav a:hover{
+            color:#00d8ff;
+        }
 
-        /* 作品网格 */
+        /* 面包屑 */
+        .breadcrumb{
+            padding:15px 20px;
+            background:#2b2b2b;
+            color:#aaa;
+            font-size:14px;
+            max-width:1200px;
+            margin:0 auto;
+        }
+        .breadcrumb a{color:#aaa;text-decoration:none;}
+        .breadcrumb a:hover{color:#00d8ff;}
+        .breadcrumb span{color:#ccc;}
+
+        /* 内容容器 */
+        .container{
+            max-width:1200px;
+            margin:0 auto;
+            padding:0 20px 40px;
+            display:flex;
+            gap:30px;
+        }
+
+        /* 左侧分类菜单 */
+        .sidebar{
+            width:220px;
+            flex-shrink:0;
+        }
+        .sidebar h3{
+            color:#e74c3c;
+            font-size:18px;
+            margin-bottom:20px;
+            padding-bottom:10px;
+            border-bottom:1px solid #444;
+        }
+        .sidebar ul{list-style:none;}
+        .sidebar ul li{margin-bottom:12px;}
+        .sidebar ul li a{
+            color:#ccc;
+            text-decoration:none;
+            font-size:15px;
+            padding:6px 10px;
+            display:block;
+            border-radius:4px;
+        }
+        .sidebar ul li a.active{
+            background:#e74c3c;
+            color:#fff;
+        }
+        .sidebar ul li a:hover{
+            background:#444;
+            color:#fff;
+        }
+
+        /* 右侧作品网格 */
+        .content{flex:1;}
         .portfolio-grid{
             display:grid;
             grid-template-columns: repeat(4, 1fr);
-            gap:15px;
-            padding:0 20px 40px;
-            max-width:1400px;
-            margin:0 auto;
+            gap:20px;
         }
         .portfolio-item{
-            background:#2d2d2d;
-            border-radius:6px;
+            background:#333;
+            border-radius:4px;
             overflow:hidden;
-            display:none;
         }
-        .portfolio-item.active{display:block;}
         .portfolio-item img{
             width:100%;
             display:block;
         }
         .portfolio-item:hover{opacity:0.85;}
 
-        /* 页面模块（默认隐藏，通过导航切换） */
-        .page{display:none;}
-        .page.active{display:block;}
+        /* 页脚 */
+        footer{
+            background:#222;
+            padding:20px;
+            text-align:center;
+            color:#777;
+            font-size:14px;
+            margin-top:30px;
+        }
 
-        /* 通用模块样式 */
-        .module{
+        /* 联系我们模块 */
+        .contact-page{
             max-width:900px;
             margin:40px auto;
             padding:0 20px;
         }
-        .module h2{
-            color:#00d8ff;
-            margin-bottom:20px;
-            font-size:24px;
-        }
-        .module p{
-            color:#ccc;
-            font-size:16px;
-            line-height:1.8;
-            margin-bottom:15px;
-        }
-        .module ul{
-            color:#ccc;
-            font-size:16px;
-            line-height:1.8;
-            padding-left:20px;
-        }
-
-        /* 联系我们模块 */
         .contact-card{
-            background:#2d2d2d;
+            background:#333;
             padding:35px;
-            text-align:center;
-            margin:40px auto;
-            border-radius:12px;
-            max-width:600px;
+            border-radius:8px;
         }
         .contact-card h2{
             color:#00d8ff;
             margin-bottom:25px;
-            font-size:26px;
+            font-size:24px;
         }
         .contact-card p{
-            font-size:18px;
+            color:#ccc;
+            font-size:17px;
             margin:12px 0;
-            color:#eee;
         }
-        .contact-card strong{
-            color:#fff;
-            font-weight:bold;
-        }
+        .contact-card strong{color:#fff;}
 
-        /* 页脚 */
-        footer{text-align:center;padding:25px;color:#666;font-size:14px;}
+        /* 通用页面模块 */
+        .page{display:none;}
+        .page.active{display:block;}
     </style>
 </head>
 <body>
-    <!-- 顶部导航栏 -->
+    <!-- 顶部语言栏 -->
+    <div class="top-bar">
+        <div></div>
+        <div class="lang">
+            <a href="#">中文</a>
+            <a href="#">English</a>
+            <a href="#">日本語</a>
+        </div>
+    </div>
+
+    <!-- 主导航栏 -->
     <nav>
+        <div class="logo">CYGG</div>
         <a class="nav-link active" data-page="home">首页</a>
-        <a class="nav-link" data-page="about">关于我们</a>
-        <a class="nav-link" data-page="team">我们团队</a>
-        <a class="nav-link" data-page="strength">我们优势</a>
-        <a class="nav-link" data-page="case">作品展示</a>
-        <a class="nav-link" data-page="partner">合作伙伴</a>
+        <a class="nav-link" data-page="custom">游戏定制</a>
+        <a class="nav-link" data-page="virtual">虚拟人/元宇宙</a>
+        <a class="nav-link" data-page="art">原画</a>
+        <a class="nav-link" data-page="model">3D模型</a>
+        <a class="nav-link" data-page="motion">2D3D动效</a>
+        <a class="nav-link" data-page="video">视频制作</a>
         <a class="nav-link" data-page="contact">联系我们</a>
+        <a class="nav-link" data-page="about">关于我们</a>
     </nav>
 
-    <!-- 首页模块 -->
-    <div id="home" class="page active module">
-        <h2>欢迎来到 CYGG 美术工作室</h2>
-        <p>我们是专注于**游戏美术全流程外包**的专业团队，为全球游戏开发者提供高品质美术解决方案。</p>
-        <p>从概念原画到3D建模，从UI交互到美宣插画，我们用专业能力助力你的游戏项目脱颖而出。</p>
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb">
+        <a href="#">首页</a> &gt; <a href="#">原画</a> &gt; <span>场景原画设计</span>
     </div>
 
-    <!-- 关于我们模块 -->
-    <div id="about" class="page module">
-        <h2>关于我们</h2>
-        <p>CYGG 美术工作室成立于2026年，核心成员均来自一线游戏研发公司，拥有5年以上项目经验。</p>
-        <p>我们深耕游戏美术领域，擅长二次元、写实、科幻、Q版等多种风格，已为数十款上线游戏提供美术服务。</p>
-        <p>我们坚持「诚信交付、品质优先」的理念，与客户建立长期稳定的合作关系。</p>
-    </div>
-
-    <!-- 我们团队模块 -->
-    <div id="team" class="page module">
-        <h2>我们团队</h2>
-        <p>团队由原画设计师、3D建模师、UI设计师、插画师组成，覆盖游戏美术全流程：</p>
-        <ul>
-            <li>角色/场景原画组：擅长世界观构建与视觉叙事</li>
-            <li>3D建模组：精通次世代、手绘、低模等多种制作流程</li>
-            <li>UI/交互组：打造符合游戏调性的界面体验</li>
-            <li>美宣组：负责宣传图、立绘、海报等视觉包装</li>
-        </ul>
-        <p>我们是高效协作的小而美团队，响应快、改稿灵活、沟通顺畅。</p>
-    </div>
-
-    <!-- 我们优势模块 -->
-    <div id="strength" class="page module">
-        <h2>我们优势</h2>
-        <p>✅ 专职美术团队：全职接单，稳定交付，拒绝兼职拖延</p>
-        <p>✅ 全流程服务：从概念到成品，一站式解决美术需求</p>
-        <p>✅ 风格全覆盖：二次元/写实/科幻/Q版/国风均有成熟案例</p>
-        <p>✅ 灵活合作：支持散单、整包、长期驻场等多种模式</p>
-        <p>✅ 价格透明：按需报价，无隐形消费，可走简易合作协议</p>
-        <p>✅ 售后保障：免费小改，重大问题可协商调整，保障甲方权益</p>
-    </div>
-
-    <!-- 作品展示模块 -->
-    <div id="case" class="page active">
-        <!-- 作品分类标签 -->
-        <div class="category">
-            <a class="cat active" data-cat="scene">场景原画</a>
-            <a class="cat" data-cat="char">角色原画</a>
-            <a class="cat" data-cat="prop">装备道具</a>
-            <a class="cat" data-cat="promo">美术宣传</a>
+    <!-- 内容区域 -->
+    <div class="container">
+        <!-- 左侧分类 -->
+        <div class="sidebar">
+            <h3>作品分类</h3>
+            <ul>
+                <li><a href="#">2D游戏原画</a></li>
+                <li><a href="#" class="active">场景原画设计</a></li>
+                <li><a href="#">卡牌插画宣传</a></li>
+                <li><a href="#">写实角色原画</a></li>
+                <li><a href="#">Q版角色原画</a></li>
+                <li><a href="#">原画设定集</a></li>
+                <li><a href="#">UI图标设计</a></li>
+                <li><a href="#">漫画上色</a></li>
+            </ul>
         </div>
 
-        <!-- 作品展示墙 -->
-        <div class="portfolio-grid">
-            <!-- 场景原画 -->
-            <div class="portfolio-item active" data-cat="scene">
-                <img src="https://picsum.photos/seed/scene1/600/350.jpg" alt="场景原画01">
-            </div>
-            <div class="portfolio-item active" data-cat="scene">
-                <img src="https://picsum.photos/seed/scene2/600/350.jpg" alt="场景原画02">
-            </div>
-            <div class="portfolio-item active" data-cat="scene">
-                <img src="https://picsum.photos/seed/scene3/600/350.jpg" alt="场景原画03">
-            </div>
-            <div class="portfolio-item active" data-cat="scene">
-                <img src="https://picsum.photos/seed/scene4/600/350.jpg" alt="场景原画04">
-            </div>
-            <div class="portfolio-item active" data-cat="scene">
-                <img src="https://picsum.photos/seed/scene5/600/350.jpg" alt="场景原画05">
-            </div>
-            <div class="portfolio-item active" data-cat="scene">
-                <img src="https://picsum.photos/seed/scene6/600/350.jpg" alt="场景原画06">
-            </div>
-            <div class="portfolio-item active" data-cat="scene">
-                <img src="https://picsum.photos/seed/scene7/600/350.jpg" alt="场景原画07">
-            </div>
-            <div class="portfolio-item active" data-cat="scene">
-                <img src="https://picsum.photos/seed/scene8/600/350.jpg" alt="场景原画08">
-            </div>
-
-            <!-- 角色原画 -->
-            <div class="portfolio-item" data-cat="char">
-                <img src="https://picsum.photos/seed/char1/600/350.jpg" alt="角色原画01">
-            </div>
-            <div class="portfolio-item" data-cat="char">
-                <img src="https://picsum.photos/seed/char2/600/350.jpg" alt="角色原画02">
-            </div>
-            <div class="portfolio-item" data-cat="char">
-                <img src="https://picsum.photos/seed/char3/600/350.jpg" alt="角色原画03">
-            </div>
-            <div class="portfolio-item" data-cat="char">
-                <img src="https://picsum.photos/seed/char4/600/350.jpg" alt="角色原画04">
-            </div>
-
-            <!-- 装备道具 -->
-            <div class="portfolio-item" data-cat="prop">
-                <img src="https://picsum.photos/seed/prop1/600/350.jpg" alt="装备道具01">
-            </div>
-            <div class="portfolio-item" data-cat="prop">
-                <img src="https://picsum.photos/seed/prop2/600/350.jpg" alt="装备道具02">
-            </div>
-            <div class="portfolio-item" data-cat="prop">
-                <img src="https://picsum.photos/seed/prop3/600/350.jpg" alt="装备道具03">
-            </div>
-            <div class="portfolio-item" data-cat="prop">
-                <img src="https://picsum.photos/seed/prop4/600/350.jpg" alt="装备道具04">
-            </div>
-
-            <!-- 美术宣传 -->
-            <div class="portfolio-item" data-cat="promo">
-                <img src="https://picsum.photos/seed/promo1/600/350.jpg" alt="美术宣传01">
-            </div>
-            <div class="portfolio-item" data-cat="promo">
-                <img src="https://picsum.photos/seed/promo2/600/350.jpg" alt="美术宣传02">
-            </div>
-            <div class="portfolio-item" data-cat="promo">
-                <img src="https://picsum.photos/seed/promo3/600/350.jpg" alt="美术宣传03">
-            </div>
-            <div class="portfolio-item" data-cat="promo">
-                <img src="https://picsum.photos/seed/promo4/600/350.jpg" alt="美术宣传04">
+        <!-- 右侧作品展示 -->
+        <div class="content">
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://picsum.photos/seed/scene1/400/250.jpg" alt="场景原画01">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://picsum.photos/seed/scene2/400/250.jpg" alt="场景原画02">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://picsum.photos/seed/scene3/400/250.jpg" alt="场景原画03">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://picsum.photos/seed/scene4/400/250.jpg" alt="场景原画04">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://picsum.photos/seed/scene5/400/250.jpg" alt="场景原画05">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://picsum.photos/seed/scene6/400/250.jpg" alt="场景原画06">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://picsum.photos/seed/scene7/400/250.jpg" alt="场景原画07">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://picsum.photos/seed/scene8/400/250.jpg" alt="场景原画08">
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- 合作伙伴模块 -->
-    <div id="partner" class="page module">
-        <h2>合作伙伴</h2>
-        <p>我们已与多家知名游戏公司、独立工作室、发行平台建立长期合作：</p>
-        <ul>
-            <li>手游/端游研发团队</li>
-            <li>独立游戏工作室</li>
-            <li>VR/AR内容制作公司</li>
-            <li>游戏发行与平台方</li>
-        </ul>
-        <p>我们重视每一位合作伙伴，以专业能力和诚信态度共同打造精品游戏。</p>
-    </div>
-
-    <!-- 联系我们模块（含联系方式） -->
-    <div id="contact" class="page module">
+    <!-- 联系我们页面 -->
+    <div id="contact" class="page contact-page">
         <div class="contact-card">
             <h2>📩 联系我们（直接发包）</h2>
+            <p>📧 邮箱：<strong>madongyi@skylinegamefz.com</strong></p>
+            <p>🌐 官网：<strong>www.skylinegamefz.com</strong></p>
             <p>📱 微信：<strong>Cygg-Cola</strong></p>
             <p>🐧 QQ：<strong>3794434904</strong></p>
             <p>🎨 承接范围：散单 / 整包 / 长期合作 / 驻场支持</p>
-            <p>⏰ 响应时间：工作日 1 小时内回复，非工作日 24 小时内回复</p>
         </div>
     </div>
 
@@ -261,34 +258,27 @@
     </footer>
 
     <script>
-        // 导航栏切换页面逻辑
+        // 导航栏切换逻辑
         const navLinks = document.querySelectorAll('.nav-link');
         const pages = document.querySelectorAll('.page');
-        
+        const mainContent = document.querySelector('.container');
+
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.forEach(l => l.classList.remove('active'));
                 link.classList.add('active');
                 
-                const targetPage = link.dataset.page;
-                pages.forEach(page => {
-                    page.classList.toggle('active', page.id === targetPage);
-                });
-            });
-        });
-
-        // 作品分类切换逻辑
-        const cats = document.querySelectorAll('.cat');
-        const items = document.querySelectorAll('.portfolio-item');
-        
-        cats.forEach(cat => {
-            cat.addEventListener('click', () => {
-                cats.forEach(c => c.classList.remove('active'));
-                cat.classList.add('active');
-                const target = cat.dataset.cat;
-                items.forEach(item => {
-                    item.classList.toggle('active', item.dataset.cat === target);
-                });
+                const target = link.dataset.page;
+                if(target === 'art' || target === 'home'){
+                    mainContent.style.display = 'flex';
+                    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+                } else if(target === 'contact'){
+                    mainContent.style.display = 'none';
+                    document.getElementById('contact').classList.add('active');
+                } else {
+                    mainContent.style.display = 'none';
+                    alert('该模块正在开发中~');
+                }
             });
         });
     </script>
