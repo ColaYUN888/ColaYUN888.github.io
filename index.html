@@ -23,14 +23,16 @@ img{max-width:100%;vertical-align:middle}
 .head-nav .logo{margin-right:50px;font-size:22px;font-weight:bold}
 .head-nav .nav{display:-webkit-box;display:-ms-flexbox;display:flex;list-style:none}
 .head-nav .nav li{margin-right:40px}
-.head-nav .nav li a{color:#ccc;font-size:16px}
+/* 主导航 26px */
+.head-nav .nav li a{color:#ccc;font-size:26px}
 .head-nav .nav li a:hover{color:#00b7ee}
 
 .subnav{height:50px;background-color:#252525}
 .subnav .inner{width:1200px;margin:0 auto}
 .subnav ul{display:-webkit-box;display:-ms-flexbox;display:flex;list-style:none;height:100%;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .subnav ul li{margin-right:35px}
-.subnav ul li a{color:#999;font-size:18px}
+/* 子分类 20px */
+.subnav ul li a{color:#999;font-size:20px}
 .subnav ul li a.active{color:#fff;font-weight:bold}
 .subnav ul li a:hover{color:#fff}
 
@@ -88,14 +90,13 @@ img{max-width:100%;vertical-align:middle}
   <div class="subnav">
     <div class="inner">
       <ul>
-        <li><a class="sub-btn active" data-cat="2d">2D游戏原画</a></li>
+        <li><a class="sub-btn active" data-cat="all">全部作品</a></li>
+        <li><a class="sub-btn" data-cat="2d">2D游戏原画</a></li>
         <li><a class="sub-btn" data-cat="scene">场景原画设计</a></li>
         <li><a class="sub-btn" data-cat="card">卡牌插画宣传</a></li>
         <li><a class="sub-btn" data-cat="real">写实角色原画</a></li>
         <li><a class="sub-btn" data-cat="q">Q版角色原画</a></li>
-        <li><a class="sub-btn" data-cat="set">原画设定集</a></li>
         <li><a class="sub-btn" data-cat="ui">UI图标设计</a></li>
-        <li><a class="sub-btn" data-cat="color">漫画上色</a></li>
       </ul>
     </div>
   </div>
@@ -105,14 +106,22 @@ img{max-width:100%;vertical-align:middle}
   <div id="home" class="page active">
     <h2>精品案例</h2>
     <div class="case-list">
-      <div class="case-item" data-cat="2d"><div class="box"><img src="https://picsum.photos/seed/c1/600/400"></div></div>
-      <div class="case-item" data-cat="scene"><div class="box"><img src="https://picsum.photos/seed/c2/600/400"></div></div>
-      <div class="case-item" data-cat="card"><div class="box"><img src="https://picsum.photos/seed/c3/600/400"></div></div>
-      <div class="case-item" data-cat="real"><div class="box"><img src="https://picsum.photos/seed/c4/600/400"></div></div>
-      <div class="case-item" data-cat="q"><div class="box"><img src="https://picsum.photos/seed/c5/600/400"></div></div>
-      <div class="case-item" data-cat="set"><div class="box"><img src="https://picsum.photos/seed/c6/600/400"></div></div>
-      <div class="case-item" data-cat="ui"><div class="box"><img src="https://picsum.photos/seed/c7/600/400"></div></div>
-      <div class="case-item" data-cat="color"><div class="box"><img src="https://picsum.photos/seed/c8/600/400"></div></div>
+      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game1/600/400"></div></div>
+      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game2/600/400"></div></div>
+      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game3/600/400"></div></div>
+      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game4/600/400"></div></div>
+      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game5/600/400"></div></div>
+      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game6/600/400"></div></div>
+      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game7/600/400"></div></div>
+      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game8/600/400"></div></div>
+      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game9/600/400"></div></div>
+      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game10/600/400"></div></div>
+      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game11/600/400"></div></div>
+      <div class="case-item" data-cat="all"><div class="box"><img src="https://picsum.photos/seed/game12/600/400"></div></div>
+      <div class="case-item" data-cat="scene"><div class="box"><img src="https://picsum.photos/seed/scene1/600/400"></div></div>
+      <div class="case-item" data-cat="scene"><div class="box"><img src="https://picsum.photos/seed/scene2/600/400"></div></div>
+      <div class="case-item" data-cat="scene"><div class="box"><img src="https://picsum.photos/seed/scene3/600/400"></div></div>
+      <div class="case-item" data-cat="scene"><div class="box"><img src="https://picsum.photos/seed/scene4/600/400"></div></div>
     </div>
   </div>
 
@@ -154,7 +163,7 @@ btns.forEach(btn => {
   })
 })
 
-// 子分类切换（你要的图标切换功能）
+// 子分类切换
 const subBtns = document.querySelectorAll('.sub-btn');
 const caseItems = document.querySelectorAll('.case-item');
 subBtns.forEach(btn => {
