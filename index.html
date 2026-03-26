@@ -30,7 +30,7 @@ img{width:100%;height:auto;border-radius:8px}
 .page{display:none}
 .page.active{display:block}
 
-/* 这里修复了放大不变形！ */
+/* 修复放大不变形 */
 .img-popup{
   position:fixed;
   top:0;
@@ -65,8 +65,8 @@ img{width:100%;height:auto;border-radius:8px}
 <div class="head-top">
   <div class="inner">
     <div class="fr">
-      <span>madianyi@skyline.com</span>
-      <span class="lang"><a href="#">中文</a><a href="#">EN</a></span>
+      <span>madongyi@skylinegamefz.com</span>
+      <span class="lang"><a href="#">中文</a><a href="#">EN</a><a href="#">JP</a></span>
     </div>
   </div>
 </div>
@@ -94,13 +94,20 @@ img{width:100%;height:auto;border-radius:8px}
 </div>
 
 <div class="main">
+  <!-- 首页 恢复完整文案 -->
   <div id="home" class="page active">
     <h2>欢迎来到 CYGG 游戏美术工作室</h2>
-    <br>
-    <p>专注游戏原画 / 3D模型 / 场景设计 / 美术外包</p>
+    <p class="desc" style="text-align:center;color:#ccc;font-size:16px;line-height:1.8;margin:20px 0;max-width:900px;margin-left:auto;margin-right:auto">
+      我们是一支专注于游戏美术制作的专业团队，提供原画设计、3D建模、UI界面、卡牌插画等一站式美术外包服务。用心创作每一份作品，用实力满足客户需求！
+    </p>
   </div>
 
+  <!-- 作品展示 -->
   <div id="art" class="page">
+    <h2>作品展示</h2>
+    <p class="desc" style="text-align:center;color:#ccc;font-size:16px;line-height:1.8;margin:20px 0;max-width:900px;margin-left:auto;margin-right:auto">
+      点击下方分类，查看我们的专业美术作品，涵盖2D原画、3D模型、UI设计等全品类游戏美术资源。
+    </p>
     <div class="case-list">
       <div class="case-item" data-cat="scene">
         <div class="box" onclick="openPopup(this)">
@@ -115,13 +122,36 @@ img{width:100%;height:auto;border-radius:8px}
     </div>
   </div>
 
-  <div id="about" class="page"><h2>关于我们</h2><br><p>专业游戏美术定制服务</p></div>
-  <div id="contact" class="page"><h2>商务合作</h2><br><p>邮箱：madianyi@skyline.com</p></div>
+  <!-- 关于我们 恢复完整文案 -->
+  <div id="about" class="page">
+    <h2>关于 CYGG</h2>
+    <p class="desc" style="text-align:center;color:#ccc;font-size:16px;line-height:1.8;margin:20px 0;max-width:900px;margin-left:auto;margin-right:auto">
+      CYGG 工作室成立于2020年，专注游戏美术制作，拥有多年行业经验。<br>
+      团队成员均来自一线游戏公司，擅长各类风格美术创作，服务客户遍布全国。<br>
+      我们坚持高品质、高效率、诚信合作，致力于成为您最信赖的美术外包合作伙伴。
+    </p>
+  </div>
+
+  <!-- 联系我们 恢复完整联系方式 -->
+  <div id="contact" class="page">
+    <h2>商务合作</h2>
+    <div class="contact" style="background:#222;padding:35px;border-radius:6px;margin-top:20px;text-align:center">
+      <p style="margin-bottom:12px;font-size:16px;color:#eee">📩 邮箱：madongyi@skylinegamefz.com</p>
+      <p style="margin-bottom:12px;font-size:16px;color:#eee">🌐 官网：www.skylinegamefz.com</p>
+      <p style="margin-bottom:12px;font-size:16px;color:#eee">📱 微信：Cygg_Studio</p>
+      <p style="margin-bottom:12px;font-size:16px;color:#eee">🐧 QQ：3794434904</p>
+      <p style="margin-bottom:12px;font-size:16px;color:#eee">🎯 承接：整包 / 散单 / 长期合作 / 项目驻场</p>
+    </div>
+  </div>
 </div>
 
 <div class="img-popup" id="popup">
   <span class="close" onclick="closePopup()">×</span>
   <img id="popupImg">
+</div>
+
+<div class="footer" style="background:#000;padding:30px;text-align:center;color:#777;margin-top:30px">
+  © 2026 CYGG Studio 版权所有 | 专业游戏美术外包服务商
 </div>
 
 <script>
@@ -152,7 +182,7 @@ subBtns.forEach(btn=>{
   })
 })
 
-// 图片弹窗（已修复不变形）
+// 图片弹窗
 function openPopup(el){
   document.getElementById('popup').style.display='flex';
   document.getElementById('popupImg').src=el.querySelector('img').src;
