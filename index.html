@@ -86,13 +86,12 @@ img{width:100%;height:auto;border-radius:8px}
     </p>
   </div>
 
-  <!-- 作品展示 → 你以后只需要在这里加图！ -->
+  <!-- 作品展示 -->
   <div id="art" class="page">
     <h2>作品展示</h2>
     <p style="margin:20px 0;line-height:1.8;color:#ccc">点击图片可放大查看</p>
     
     <div class="case-list">
-      <!-- 场景原画 -->
       <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="a.jpg"></div></div>
       <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="b.jpg"></div></div>
     </div>
@@ -128,19 +127,19 @@ img{width:100%;height:auto;border-radius:8px}
 <div class="footer">© 2026 CYGG Studio 版权所有</div>
 
 <script>
-// 主导航切换
+// 主导航 —— 完全独立
 const navBtns = document.querySelectorAll('.nav-btn');
 const pages = document.querySelectorAll('.page');
 navBtns.forEach(btn=>{
   btn.addEventListener('click',()=>{
     navBtns.forEach(b=>b.classList.remove('active'));
-    pages.forEach(p=>p.classList.remove('active'));
     btn.classList.add('active');
+    pages.forEach(p=>p.classList.remove('active'));
     document.getElementById(btn.dataset.page).classList.add('active');
   })
 })
 
-// 分类筛选
+// 子栏目 —— 只控制图片显示，不影响页面切换
 const subBtns = document.querySelectorAll('.sub-btn');
 const artItems = document.querySelectorAll('#art .case-item');
 subBtns.forEach(btn=>{
@@ -149,13 +148,16 @@ subBtns.forEach(btn=>{
     btn.classList.add('active');
     let t = btn.dataset.cat;
     artItems.forEach(i=>{
-      if(t=='all' || i.dataset.cat==t) i.style.display='block';
-      else i.style.display='none';
-    })
-  })
-})
+      if(t === 'all' || i.dataset.cat === t){
+        i.style.display = 'block';
+      }else{
+        i.style.display = 'none';
+      }
+    });
+  });
+});
 
-// 弹窗
+// 图片弹窗
 function openPopup(el){
   document.getElementById('popup').style.display='flex';
   document.getElementById('popupImg').src=el.querySelector('img').src;
