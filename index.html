@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CYGG - 专业游戏美术外包</title>
+<title>CYGG - 游戏美术作品集</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Microsoft YaHei",Arial,sans-serif}
 body{background:#1a1a1a;color:#fff}
@@ -11,18 +11,20 @@ body{background:#1a1a1a;color:#fff}
 .head-top{height:34px;background:#000;line-height:34px;font-size:12px;color:#999}
 .inner{width:1200px;margin:0 auto}
 .fr{float:right}
-.lang a{color:#fff;margin:0 10px;text-decoration:none}
 
 .logo-big{text-align:center;background:#111;font-size:80px;padding:20px 0}
 .head-nav{background:#111;padding:15px 0;text-align:center}
 .nav{list-style:none;padding:0;display:flex;justify-content:center;gap:40px}
-.nav a{color:#fff;font-size:24px;text-decoration:none}
+.nav a{color:#fff;font-size:24px;text-decoration:none;cursor:default;}
+.nav a.active{color:#1E90FF;}
+
 .subnav{background:#222;padding:12px 0}
 .subnav ul{list-style:none;padding:0;display:flex;justify-content:center;gap:25px}
-.subnav a{color:#fff;font-size:16px;text-decoration:none}
+.subnav a{color:#fff;font-size:16px;text-decoration:none;cursor:default;}
+.subnav a.active{color:#1E90FF;}
 
 .main{width:1200px;margin:0 auto;padding:30px}
-.case-list{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
+.case-list{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:20px}
 .case-item{width:280px}
 .box{cursor:pointer}
 img{width:100%;height:auto;border-radius:8px}
@@ -30,34 +32,16 @@ img{width:100%;height:auto;border-radius:8px}
 .page{display:none}
 .page.active{display:block}
 
-/* 修复放大不变形 */
+/* 图片弹窗 不变形 */
 .img-popup{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.95);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  background:rgba(0,0,0,0.95);display:none;
+  justify-content:center;align-items:center;z-index:9999;
 }
-.img-popup img{
-  max-width:95%;
-  max-height:95%;
-  width:auto;
-  height:auto;
-  object-fit:contain;
-}
-.close{
-  position:absolute;
-  top:20px;
-  right:30px;
-  font-size:40px;
-  color:#fff;
-  cursor:pointer;
-}
+.img-popup img{max-width:95%;max-height:95%;width:auto;height:auto;object-fit:contain}
+.close{position:absolute;top:20px;right:30px;font-size:40px;color:#fff;cursor:pointer}
+
+.footer{background:#000;padding:25px;text-align:center;color:#777;margin-top:40px}
 </style>
 </head>
 <body>
@@ -66,7 +50,6 @@ img{width:100%;height:auto;border-radius:8px}
   <div class="inner">
     <div class="fr">
       <span>madongyi@skylinegamefz.com</span>
-      <span class="lang"><a href="#">中文</a><a href="#">EN</a><a href="#">JP</a></span>
     </div>
   </div>
 </div>
@@ -94,53 +77,45 @@ img{width:100%;height:auto;border-radius:8px}
 </div>
 
 <div class="main">
-  <!-- 首页 恢复完整文案 -->
+  <!-- 首页 -->
   <div id="home" class="page active">
     <h2>欢迎来到 CYGG 游戏美术工作室</h2>
-    <p class="desc" style="text-align:center;color:#ccc;font-size:16px;line-height:1.8;margin:20px 0;max-width:900px;margin-left:auto;margin-right:auto">
-      我们是一支专注于游戏美术制作的专业团队，提供原画设计、3D建模、UI界面、卡牌插画等一站式美术外包服务。用心创作每一份作品，用实力满足客户需求！
+    <p style="margin:20px 0;line-height:1.8;color:#ccc">
+      专注游戏美术定制 | 原画设计 | 3D建模 | UI界面 | 卡牌插画<br>
+      用心创作，用品质服务每一位客户
     </p>
   </div>
 
-  <!-- 作品展示 -->
+  <!-- 作品展示 → 你以后只需要在这里加图！ -->
   <div id="art" class="page">
     <h2>作品展示</h2>
-    <p class="desc" style="text-align:center;color:#ccc;font-size:16px;line-height:1.8;margin:20px 0;max-width:900px;margin-left:auto;margin-right:auto">
-      点击下方分类，查看我们的专业美术作品，涵盖2D原画、3D模型、UI设计等全品类游戏美术资源。
-    </p>
+    <p style="margin:20px 0;line-height:1.8;color:#ccc">点击图片可放大查看</p>
+    
     <div class="case-list">
-      <div class="case-item" data-cat="scene">
-        <div class="box" onclick="openPopup(this)">
-          <img src="a.jpg">
-        </div>
-      </div>
-      <div class="case-item" data-cat="scene">
-        <div class="box" onclick="openPopup(this)">
-          <img src="b.jpg">
-        </div>
-      </div>
+      <!-- 场景原画 -->
+      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="a.jpg"></div></div>
+      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="b.jpg"></div></div>
     </div>
   </div>
 
-  <!-- 关于我们 恢复完整文案 -->
+  <!-- 关于我们 -->
   <div id="about" class="page">
-    <h2>关于 CYGG</h2>
-    <p class="desc" style="text-align:center;color:#ccc;font-size:16px;line-height:1.8;margin:20px 0;max-width:900px;margin-left:auto;margin-right:auto">
-      CYGG 工作室成立于2020年，专注游戏美术制作，拥有多年行业经验。<br>
-      团队成员均来自一线游戏公司，擅长各类风格美术创作，服务客户遍布全国。<br>
-      我们坚持高品质、高效率、诚信合作，致力于成为您最信赖的美术外包合作伙伴。
+    <h2>关于我们</h2>
+    <p style="margin:20px 0;line-height:1.8;color:#ccc">
+      CYGG 工作室成立于2020年，专注游戏美术外包服务<br>
+      团队成员拥有多年一线游戏研发经验，擅长多种美术风格<br>
+      坚持高品质、高效率、诚信合作
     </p>
   </div>
 
-  <!-- 联系我们 恢复完整联系方式 -->
+  <!-- 联系我们 -->
   <div id="contact" class="page">
     <h2>商务合作</h2>
-    <div class="contact" style="background:#222;padding:35px;border-radius:6px;margin-top:20px;text-align:center">
-      <p style="margin-bottom:12px;font-size:16px;color:#eee">📩 邮箱：madongyi@skylinegamefz.com</p>
-      <p style="margin-bottom:12px;font-size:16px;color:#eee">🌐 官网：www.skylinegamefz.com</p>
-      <p style="margin-bottom:12px;font-size:16px;color:#eee">📱 微信：Cygg_Studio</p>
-      <p style="margin-bottom:12px;font-size:16px;color:#eee">🐧 QQ：3794434904</p>
-      <p style="margin-bottom:12px;font-size:16px;color:#eee">🎯 承接：整包 / 散单 / 长期合作 / 项目驻场</p>
+    <div style="background:#222;padding:30px;border-radius:8px;margin-top:20px">
+      <p style="margin-bottom:10px">📩 邮箱：madongyi@skylinegamefz.com</p>
+      <p style="margin-bottom:10px">📱 微信：Cygg_Studio</p>
+      <p style="margin-bottom:10px">🐧 QQ：3794434904</p>
+      <p style="margin-top:20px">承接：整包 | 散单 | 长期合作 | 项目驻场</p>
     </div>
   </div>
 </div>
@@ -150,9 +125,7 @@ img{width:100%;height:auto;border-radius:8px}
   <img id="popupImg">
 </div>
 
-<div class="footer" style="background:#000;padding:30px;text-align:center;color:#777;margin-top:30px">
-  © 2026 CYGG Studio 版权所有 | 专业游戏美术外包服务商
-</div>
+<div class="footer">© 2026 CYGG Studio 版权所有</div>
 
 <script>
 // 主导航切换
@@ -167,7 +140,7 @@ navBtns.forEach(btn=>{
   })
 })
 
-// 子分类切换
+// 分类筛选
 const subBtns = document.querySelectorAll('.sub-btn');
 const artItems = document.querySelectorAll('#art .case-item');
 subBtns.forEach(btn=>{
@@ -182,7 +155,7 @@ subBtns.forEach(btn=>{
   })
 })
 
-// 图片弹窗
+// 弹窗
 function openPopup(el){
   document.getElementById('popup').style.display='flex';
   document.getElementById('popupImg').src=el.querySelector('img').src;
@@ -190,9 +163,7 @@ function openPopup(el){
 function closePopup(){
   document.getElementById('popup').style.display='none';
 }
-document.getElementById('popup').addEventListener('click',function(e){
-  if(e.target===this) closePopup();
-})
+document.getElementById('popup').onclick=e=>{if(e.target===this)closePopup()}
 </script>
 </body>
 </html>
