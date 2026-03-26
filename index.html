@@ -26,7 +26,7 @@ body{background:#1a1a1a;color:#fff}
 
 .main{width:1200px;margin:0 auto;padding:30px}
 
-/* 👇 这里修复图片排列：紧凑、不镂空、整齐 */
+/* 图片排版：整齐、不镂空、紧凑 */
 .case-list{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -34,8 +34,11 @@ body{background:#1a1a1a;color:#fff}
   margin-top: 20px;
 }
 .case-item{
-  display: block !important;
+  display: none;
   width: 100%;
+}
+.case-item.show{
+  display: block !important;
 }
 .box{cursor:pointer}
 img{
@@ -130,8 +133,7 @@ img{
       CYGG 工作室成立于2020年，专注游戏美术外包服务<br>
       团队成员拥有多年一线游戏研发经验，擅长多种美术风格<br>
       坚持高品质、高效率、诚信合作
-    </p>
-  </div>
+    </div>
 
   <div id="contact" class="page">
     <h2>商务合作</h2>
@@ -156,6 +158,8 @@ img{
 const navBtns = document.querySelectorAll('.nav-btn');
 const pages = document.querySelectorAll('.page');
 const subnav = document.getElementById('subnav');
+const caseItems = document.querySelectorAll('.case-item');
+const subBtns = document.querySelectorAll('.sub-btn');
 
 navBtns.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -166,11 +170,31 @@ navBtns.forEach(btn => {
 
     if (btn.dataset.page === 'art') {
       subnav.classList.add('active');
+      filterItems('all');
     } else {
       subnav.classList.remove('active');
     }
   });
 });
+
+// 子导航筛选（已恢复！）
+subBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    subBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterItems(btn.dataset.cat);
+  });
+});
+
+function filterItems(cat) {
+  caseItems.forEach(item => {
+    if (cat === 'all' || item.dataset.cat === cat) {
+      item.classList.add('show');
+    } else {
+      item.classList.remove('show');
+    }
+  });
+}
 
 // 弹窗
 function openPopup(el){
