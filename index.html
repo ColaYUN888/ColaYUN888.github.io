@@ -114,7 +114,7 @@ img{
   <ul>
     <li><a class="sub-btn" data-cat="all">全部</a></li>
     <li><a class="sub-btn" data-cat="scene">场景原画</a></li>
-    <li><a class="sub-btn" data-cat="char">角色原画</a></li>
+    <li><a class="sub-btn active" data-cat="char">角色原画</a></li>
     <li><a class="sub-btn" data-cat="card">卡牌插画</a></li>
     <li><a class="sub-btn" data-cat="ui">UI设计</a></li>
     <li><a class="sub-btn" data-cat="model">3D模型</a></li>
@@ -134,6 +134,7 @@ img{
     <h2>作品展示</h2>
     <p style="margin:20px 0;line-height:1.8;color:#ccc">点击图片可放大查看</p>
     <div class="case-list">
+      <!-- 场景原画 -->
       <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="1.jpg"></div></div>
       <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="2.jpg"></div></div>
       <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="3.jpg"></div></div>
@@ -144,6 +145,14 @@ img{
       <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="c.jpg"></div></div>
       <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="d.jpg"></div></div>
       <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="f.jpg"></div></div>
+
+      <!-- 角色原画 -->
+      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS1.jpg"></div></div>
+      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS2.jpg"></div></div>
+      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS3.jpg"></div></div>
+      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS4.jpg"></div></div>
+      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS5.jpg"></div></div>
+      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS6.jpg"></div></div>
     </div>
   </div>
 
@@ -191,7 +200,7 @@ navBtns.forEach(btn => {
 
     if (btn.dataset.page === 'art') {
       subnav.classList.add('active');
-      filterItems('all');
+      filterItems('char');
     } else {
       subnav.classList.remove('active');
     }
