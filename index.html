@@ -6,72 +6,42 @@
 <title>CYGG - 专业游戏美术外包</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Microsoft YaHei",Arial,sans-serif}
-body{background:#1a1a1a;color:#fff}
+body{background:#1a1111;color:#fff}
 
 .head-top{height:34px;background:#000;line-height:34px;font-size:12px;color:#999}
 .inner{width:1200px;margin:0 auto}
 .fr{float:right}
-.lang{margin-left:20px}
-.lang a{margin-left:10px;color:#999;text-decoration:none}
-.lang a:hover{color:#fff}
+.lang a{color:#fff;margin:0 10px;text-decoration:none}
 
-.logo-big{
-  text-align:center;
-  background:#111;
-  font-size:80px;
-  font-weight:bold;
-  padding:20px 0;
-  color:#fff;
-}
-
-.head-nav{height:80px;background:#111}
-.head-nav .inner{display:flex;align-items:center;height:100%;justify-content:center}
-.nav{display:flex;list-style:none;gap:35px;padding:0}
-.nav li a{color:#ccc;font-size:30px;text-decoration:none;white-space:nowrap}
-.nav li a:hover{color:#00b7ee}
-
-.subnav{height:50px;background:#252525}
-.subnav .inner{height:100%}
-.subnav ul{display:flex;list-style:none;height:100%;align-items:center;justify-content:center}
-.subnav ul li{margin:0 20px}
-.subnav ul li a{color:#999;font-size:20px;text-decoration:none}
-.subnav ul li a.active{color:#fff;font-weight:bold}
-.subnav ul li a:hover{color:#fff}
+.logo-big{text-align:center;background:#111;font-size:80px;padding:20px 0}
+.head-nav{background:#111;padding:15px 0;text-align:center}
+.nav{list-style:none;padding:0;display:flex;justify-content:center;gap:40px}
+.nav a{color:#fff;font-size:24px;text-decoration:none}
+.subnav{background:#222;padding:12px 0}
+.subnav ul{list-style:none;padding:0;display:flex;justify-content:center;gap:25px}
+.subnav a{color:#fff;font-size:16px;text-decoration:none}
 
 .main{width:1200px;margin:0 auto;padding:30px 0}
-.main h2{font-size:22px;margin-bottom:20px;text-align:center}
-.desc{text-align:center;color:#ccc;font-size:16px;line-height:1.8;margin:20px 0;max-width:900px;margin-left:auto;margin-right:auto}
-
-.case-list{display:flex;flex-wrap:wrap;margin:0 -10px}
-.case-item{width:25%;padding:0 10px;margin-bottom:20px}
-.case-item .box{background:#222;border-radius:4px;overflow:hidden;cursor:pointer}
-.case-item img{width:100%;height:180px;object-fit:cover}
+.case-list{display:flex;flex-wrap:wrap;gap:15px;justify-content:center}
+.case-item{width:280px}
+.box{cursor:pointer}
+img{width:100%;height:auto;border-radius:8px}
 
 .page{display:none}
 .page.active{display:block}
 
-.contact{background:#222;padding:35px;border-radius:6px;margin-top:20px;text-align:center}
-.contact p{margin-bottom:12px;font-size:16px;color:#eee}
-
-.footer{background:#000;padding:30px;text-align:center;color:#777;margin-top:30px}
-
 .img-popup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);display:none;justify-content:center;align-items:center;z-index:9999}
 .img-popup img{max-width:90%;max-height:90%}
-.img-popup .close{position:absolute;top:20px;right:30px;font-size:40px;color:#fff;cursor:pointer}
+.close{position:absolute;top:20px;right:30px;font-size:40px;color:#fff;cursor:pointer}
 </style>
 </head>
-
 <body>
 
 <div class="head-top">
   <div class="inner">
     <div class="fr">
-      <span>madongyi@skylinegamefz.com</span>
-      <span class="lang">
-        <a href="#">中文</a>
-        <a href="#">English</a>
-        <a href="#">日本語</a>
-      </span>
+      <span>madongyi@skyline.com</span>
+      <span class="lang"><a href="#">中文</a><a href="#">EN</a><a href="#">JP</a></span>
     </div>
   </div>
 </div>
@@ -79,65 +49,37 @@ body{background:#1a1a1a;color:#fff}
 <div class="logo-big">CYGG</div>
 
 <div class="head-nav">
-  <div class="inner">
-    <ul class="nav">
-      <li><a class="nav-btn active" data-page="home">首页</a></li>
-      <li><a class="nav-btn" data-page="art">作品展示</a></li>
-      <li><a class="nav-btn" data-page="about">关于我们</a></li>
-      <li><a class="nav-btn" data-page="contact">联系我们</a></li>
-    </ul>
-  </div>
+  <ul class="nav">
+    <li><a class="nav-btn active" data-page="home">首页</a></li>
+    <li><a class="nav-btn" data-page="art">作品展示</a></li>
+    <li><a class="nav-btn" data-page="about">关于我们</a></li>
+    <li><a class="nav-btn" data-page="contact">联系我们</a></li>
+  </ul>
 </div>
 
 <div class="subnav">
-  <div class="inner">
-    <ul>
-      <li><a class="sub-btn active" data-cat="all">全部</a></li>
-      <li><a class="sub-btn" data-cat="scene">场景原画</a></li>
-      <li><a class="sub-btn" data-cat="char">角色原画</a></li>
-      <li><a class="sub-btn" data-cat="card">卡牌插画</a></li>
-      <li><a class="sub-btn" data-cat="ui">UI设计</a></li>
-      <li><a class="sub-btn" data-cat="model">3D模型</a></li>
-    </ul>
-  </div>
+  <ul>
+    <li><a class="sub-btn active" data-cat="all">全部</a></li>
+    <li><a class="sub-btn" data-cat="scene">场景原画</a></li>
+    <li><a class="sub-btn" data-cat="char">角色原画</a></li>
+    <li><a class="sub-btn" data-cat="card">卡牌插画</a></li>
+    <li><a class="sub-btn" data-cat="ui">UI设计</a></li>
+    <li><a class="sub-btn" data-cat="model">3D模型</a></li>
+  </ul>
 </div>
 
 <div class="main">
+  <div id="home" class="page active"><h2>欢迎来到 CYGG 工作室</h2></div>
 
-<!-- 首页 -->
-<div id="home" class="page active">
-  <h2>欢迎来到 CYGG 游戏美术工作室</h2>
-  <p class="desc">我们是一支专注于游戏美术制作的专业团队，提供原画设计、3D建模、UI界面、卡牌插画等一站式美术外包服务。用心创作每一份作品，用实力满足客户需求！</p>
-</div>
-
-<!-- 作品展示 → 场景原画：a.jpg + b.jpg 两张图 -->
-<div id="art" class="page">
-  <h2>作品展示</h2>
-  <p class="desc">点击下方分类，查看我们的专业美术作品，涵盖2D原画、3D模型、UI设计等全品类游戏美术资源。</p>
-  <div class="case-list">
-    <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="a.jpg"></div></div>
-    <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="b.jpg"></div></div>
+  <div id="art" class="page">
+    <div class="case-list">
+      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="a.jpg"></div></div>
+      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="b.jpg"></div></div>
+    </div>
   </div>
-</div>
 
-<!-- 关于我们 -->
-<div id="about" class="page">
-  <h2>关于 CYGG</h2>
-  <p class="desc">CYGG 工作室成立于2020年，专注游戏美术制作，拥有多年行业经验。<br>团队成员均来自一线游戏公司，擅长各类风格美术创作，服务客户遍布全国。<br>我们坚持高品质、高效率、诚信合作，致力于成为您最信赖的美术外包合作伙伴。</p>
-</div>
-
-<!-- 联系我们 -->
-<div id="contact" class="page">
-  <h2>商务合作</h2>
-  <div class="contact">
-    <p>📩 邮箱：madongyi@skylinegamefz.com</p>
-    <p>🌐 官网：www.skylinegamefz.com</p>
-    <p>📱 微信：Cygg_Studio</p>
-    <p>🐧 QQ：3794434904</p>
-    <p>🎯 承接：整包 / 散单 / 长期合作 / 项目驻场</p>
-  </div>
-</div>
-
+  <div id="about" class="page"><h2>关于我们</h2></div>
+  <div id="contact" class="page"><h2>商务合作</h2></div>
 </div>
 
 <div class="img-popup" id="popup">
@@ -145,46 +87,18 @@ body{background:#1a1a1a;color:#fff}
   <img id="popupImg">
 </div>
 
-<div class="footer">© 2026 CYGG Studio 版权所有 | 专业游戏美术外包服务商</div>
-
 <script>
 const navBtns = document.querySelectorAll('.nav-btn');
 const pages = document.querySelectorAll('.page');
-
-navBtns.forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    navBtns.forEach(b=>b.classList.remove('active'));
-    pages.forEach(p=>p.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById(btn.dataset.page).classList.add('active');
-  })
-})
+navBtns.forEach(btn=>{btn.addEventListener('click',()=>{navBtns.forEach(b=>b.classList.remove('active'));pages.forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById(btn.dataset.page).classList.add('active');})})
 
 const subBtns = document.querySelectorAll('.sub-btn');
 const artItems = document.querySelectorAll('#art .case-item');
+subBtns.forEach(btn=>{btn.addEventListener('click',()=>{subBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');let t=btn.dataset.cat;artItems.forEach(i=>{if(t=='all'||i.dataset.cat==t)i.style.display='block';else i.style.display='none';})})})
 
-subBtns.forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    subBtns.forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    let t = btn.dataset.cat;
-    artItems.forEach(i=>{
-      if(t=='all' || i.dataset.cat==t) i.style.display='block';
-      else i.style.display='none';
-    })
-  })
-})
-
-function openPopup(el){
-  document.getElementById('popup').style.display='flex';
-  document.getElementById('popupImg').src = el.querySelector('img').src;
-}
-function closePopup(){
-  document.getElementById('popup').style.display='none';
-}
-document.getElementById('popup').onclick=function(e){
-  if(e.target==this) closePopup();
-}
+function openPopup(el){document.getElementById('popup').style.display='flex';document.getElementById('popupImg').src=el.querySelector('img').src;}
+function closePopup(){document.getElementById('popup').style.display='none';}
+document.getElementById('popup').onclick=e=>{if(e.target===this)closePopup();}
 </script>
 </body>
 </html>
