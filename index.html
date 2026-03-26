@@ -18,21 +18,22 @@ body{background:#1a1a1a;color:#fff}
 .nav a{color:#fff;font-size:24px;text-decoration:none;cursor:default;}
 .nav a.active{color:#1E90FF;}
 
-.subnav{background:#222;padding:12px 0}
+.subnav{background:#222;padding:12px 0;display:none;}
+.subnav.active{display:block;}
 .subnav ul{list-style:none;padding:0;display:flex;justify-content:center;gap:25px}
 .subnav a{color:#fff;font-size:16px;text-decoration:none;cursor:default;}
 .subnav a.active{color:#1E90FF;}
 
 .main{width:1200px;margin:0 auto;padding:30px}
 .case-list{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:20px}
-.case-item{width:280px}
+.case-item{width:280px;display:none;}
+.case-item.show{display:block;}
 .box{cursor:pointer}
 img{width:100%;height:auto;border-radius:8px}
 
 .page{display:none}
 .page.active{display:block}
 
-/* 图片弹窗 不变形 */
 .img-popup{
   position:fixed;top:0;left:0;width:100%;height:100%;
   background:rgba(0,0,0,0.95);display:none;
@@ -65,9 +66,9 @@ img{width:100%;height:auto;border-radius:8px}
   </ul>
 </div>
 
-<div class="subnav">
+<div class="subnav" id="subnav">
   <ul>
-    <li><a class="sub-btn active" data-cat="all">全部</a></li>
+    <li><a class="sub-btn" data-cat="all">全部</a></li>
     <li><a class="sub-btn" data-cat="scene">场景原画</a></li>
     <li><a class="sub-btn" data-cat="char">角色原画</a></li>
     <li><a class="sub-btn" data-cat="card">卡牌插画</a></li>
@@ -77,7 +78,6 @@ img{width:100%;height:auto;border-radius:8px}
 </div>
 
 <div class="main">
-  <!-- 首页 -->
   <div id="home" class="page active">
     <h2>欢迎来到 CYGG 游戏美术工作室</h2>
     <p style="margin:20px 0;line-height:1.8;color:#ccc">
@@ -86,18 +86,15 @@ img{width:100%;height:auto;border-radius:8px}
     </p>
   </div>
 
-  <!-- 作品展示 -->
   <div id="art" class="page">
     <h2>作品展示</h2>
     <p style="margin:20px 0;line-height:1.8;color:#ccc">点击图片可放大查看</p>
-    
     <div class="case-list">
       <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="a.jpg"></div></div>
       <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="b.jpg"></div></div>
     </div>
   </div>
 
-  <!-- 关于我们 -->
   <div id="about" class="page">
     <h2>关于我们</h2>
     <p style="margin:20px 0;line-height:1.8;color:#ccc">
@@ -107,7 +104,6 @@ img{width:100%;height:auto;border-radius:8px}
     </p>
   </div>
 
-  <!-- 联系我们 -->
   <div id="contact" class="page">
     <h2>商务合作</h2>
     <div style="background:#222;padding:30px;border-radius:8px;margin-top:20px">
@@ -130,34 +126,47 @@ img{width:100%;height:auto;border-radius:8px}
 // 主导航 —— 完全独立
 const navBtns = document.querySelectorAll('.nav-btn');
 const pages = document.querySelectorAll('.page');
-navBtns.forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    navBtns.forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    pages.forEach(p=>p.classList.remove('active'));
-    document.getElementById(btn.dataset.page).classList.add('active');
-  })
-})
-
-// 子栏目 —— 只控制图片显示，不影响页面切换
+const subnav = document.getElementById('subnav');
+const caseItems = document.querySelectorAll('.case-item');
 const subBtns = document.querySelectorAll('.sub-btn');
-const artItems = document.querySelectorAll('#art .case-item');
-subBtns.forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    subBtns.forEach(b=>b.classList.remove('active'));
+
+navBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    navBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    let t = btn.dataset.cat;
-    artItems.forEach(i=>{
-      if(t === 'all' || i.dataset.cat === t){
-        i.style.display = 'block';
-      }else{
-        i.style.display = 'none';
-      }
-    });
+    pages.forEach(p => p.classList.remove('active'));
+    document.getElementById(btn.dataset.page).classList.add('active');
+
+    // 只有作品展示页显示子导航
+    if (btn.dataset.page === 'art') {
+      subnav.classList.add('active');
+      filterItems('all');
+    } else {
+      subnav.classList.remove('active');
+    }
   });
 });
 
-// 图片弹窗
+// 子导航筛选
+subBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    subBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterItems(btn.dataset.cat);
+  });
+});
+
+function filterItems(cat) {
+  caseItems.forEach(item => {
+    if (cat === 'all' || item.dataset.cat === cat) {
+      item.classList.add('show');
+    } else {
+      item.classList.remove('show');
+    }
+  });
+}
+
+// 弹窗
 function openPopup(el){
   document.getElementById('popup').style.display='flex';
   document.getElementById('popupImg').src=el.querySelector('img').src;
