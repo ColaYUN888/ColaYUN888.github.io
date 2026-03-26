@@ -6,7 +6,7 @@
 <title>CYGG - 专业游戏美术外包</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Microsoft YaHei",Arial,sans-serif}
-body{background:#1a1111;color:#fff}
+body{background:#1a1a1a;color:#fff}
 
 .head-top{height:34px;background:#000;line-height:34px;font-size:12px;color:#999}
 .inner{width:1200px;margin:0 auto}
@@ -21,8 +21,8 @@ body{background:#1a1111;color:#fff}
 .subnav ul{list-style:none;padding:0;display:flex;justify-content:center;gap:25px}
 .subnav a{color:#fff;font-size:16px;text-decoration:none}
 
-.main{width:1200px;margin:0 auto;padding:30px 0}
-.case-list{display:flex;flex-wrap:wrap;gap:15px;justify-content:center}
+.main{width:1200px;margin:0 auto;padding:30px}
+.case-list{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
 .case-item{width:280px}
 .box{cursor:pointer}
 img{width:100%;height:auto;border-radius:8px}
@@ -30,9 +30,34 @@ img{width:100%;height:auto;border-radius:8px}
 .page{display:none}
 .page.active{display:block}
 
-.img-popup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);display:none;justify-content:center;align-items:center;z-index:9999}
-.img-popup img{max-width:90%;max-height:90%}
-.close{position:absolute;top:20px;right:30px;font-size:40px;color:#fff;cursor:pointer}
+/* 这里修复了放大不变形！ */
+.img-popup{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.95);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+.img-popup img{
+  max-width:95%;
+  max-height:95%;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+}
+.close{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:40px;
+  color:#fff;
+  cursor:pointer;
+}
 </style>
 </head>
 <body>
@@ -40,8 +65,8 @@ img{width:100%;height:auto;border-radius:8px}
 <div class="head-top">
   <div class="inner">
     <div class="fr">
-      <span>madongyi@skyline.com</span>
-      <span class="lang"><a href="#">中文</a><a href="#">EN</a><a href="#">JP</a></span>
+      <span>madianyi@skyline.com</span>
+      <span class="lang"><a href="#">中文</a><a href="#">EN</a></span>
     </div>
   </div>
 </div>
@@ -69,17 +94,29 @@ img{width:100%;height:auto;border-radius:8px}
 </div>
 
 <div class="main">
-  <div id="home" class="page active"><h2>欢迎来到 CYGG 工作室</h2></div>
+  <div id="home" class="page active">
+    <h2>欢迎来到 CYGG 游戏美术工作室</h2>
+    <br>
+    <p>专注游戏原画 / 3D模型 / 场景设计 / 美术外包</p>
+  </div>
 
   <div id="art" class="page">
     <div class="case-list">
-      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="a.jpg"></div></div>
-      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="b.jpg"></div></div>
+      <div class="case-item" data-cat="scene">
+        <div class="box" onclick="openPopup(this)">
+          <img src="a.jpg">
+        </div>
+      </div>
+      <div class="case-item" data-cat="scene">
+        <div class="box" onclick="openPopup(this)">
+          <img src="b.jpg">
+        </div>
+      </div>
     </div>
   </div>
 
-  <div id="about" class="page"><h2>关于我们</h2></div>
-  <div id="contact" class="page"><h2>商务合作</h2></div>
+  <div id="about" class="page"><h2>关于我们</h2><br><p>专业游戏美术定制服务</p></div>
+  <div id="contact" class="page"><h2>商务合作</h2><br><p>邮箱：madianyi@skyline.com</p></div>
 </div>
 
 <div class="img-popup" id="popup">
@@ -88,17 +125,44 @@ img{width:100%;height:auto;border-radius:8px}
 </div>
 
 <script>
+// 主导航切换
 const navBtns = document.querySelectorAll('.nav-btn');
 const pages = document.querySelectorAll('.page');
-navBtns.forEach(btn=>{btn.addEventListener('click',()=>{navBtns.forEach(b=>b.classList.remove('active'));pages.forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById(btn.dataset.page).classList.add('active');})})
+navBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    navBtns.forEach(b=>b.classList.remove('active'));
+    pages.forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.page).classList.add('active');
+  })
+})
 
+// 子分类切换
 const subBtns = document.querySelectorAll('.sub-btn');
 const artItems = document.querySelectorAll('#art .case-item');
-subBtns.forEach(btn=>{btn.addEventListener('click',()=>{subBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');let t=btn.dataset.cat;artItems.forEach(i=>{if(t=='all'||i.dataset.cat==t)i.style.display='block';else i.style.display='none';})})})
+subBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    subBtns.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    let t = btn.dataset.cat;
+    artItems.forEach(i=>{
+      if(t=='all' || i.dataset.cat==t) i.style.display='block';
+      else i.style.display='none';
+    })
+  })
+})
 
-function openPopup(el){document.getElementById('popup').style.display='flex';document.getElementById('popupImg').src=el.querySelector('img').src;}
-function closePopup(){document.getElementById('popup').style.display='none';}
-document.getElementById('popup').onclick=e=>{if(e.target===this)closePopup();}
+// 图片弹窗（已修复不变形）
+function openPopup(el){
+  document.getElementById('popup').style.display='flex';
+  document.getElementById('popupImg').src=el.querySelector('img').src;
+}
+function closePopup(){
+  document.getElementById('popup').style.display='none';
+}
+document.getElementById('popup').addEventListener('click',function(e){
+  if(e.target===this) closePopup();
+})
 </script>
 </body>
 </html>
