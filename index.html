@@ -25,11 +25,26 @@ body{background:#1a1a1a;color:#fff}
 .subnav a.active{color:#1E90FF;}
 
 .main{width:1200px;margin:0 auto;padding:30px}
-.case-list{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:20px}
-.case-item{width:280px;display:none;}
-.case-item.show{display:block;}
+
+/* 👇 这里修复图片排列：紧凑、不镂空、整齐 */
+.case-list{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+.case-item{
+  display: block !important;
+  width: 100%;
+}
 .box{cursor:pointer}
-img{width:100%;height:auto;border-radius:8px}
+img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:8px;
+  display:block;
+}
 
 .page{display:none}
 .page.active{display:block}
@@ -39,7 +54,13 @@ img{width:100%;height:auto;border-radius:8px}
   background:rgba(0,0,0,0.95);display:none;
   justify-content:center;align-items:center;z-index:9999;
 }
-.img-popup img{max-width:95%;max-height:95%;width:auto;height:auto;object-fit:contain}
+.img-popup img{
+  max-width:95%;
+  max-height:95%;
+  width:auto;
+  height:auto;
+  object-fit:contain
+}
 .close{position:absolute;top:20px;right:30px;font-size:40px;color:#fff;cursor:pointer}
 
 .footer{background:#000;padding:25px;text-align:center;color:#777;margin-top:40px}
@@ -90,7 +111,6 @@ img{width:100%;height:auto;border-radius:8px}
     <h2>作品展示</h2>
     <p style="margin:20px 0;line-height:1.8;color:#ccc">点击图片可放大查看</p>
     <div class="case-list">
-      <!-- 所有成功上传的场景原画 -->
       <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="1.jpg"></div></div>
       <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="2.jpg"></div></div>
       <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="3.jpg"></div></div>
@@ -136,8 +156,6 @@ img{width:100%;height:auto;border-radius:8px}
 const navBtns = document.querySelectorAll('.nav-btn');
 const pages = document.querySelectorAll('.page');
 const subnav = document.getElementById('subnav');
-const caseItems = document.querySelectorAll('.case-item');
-const subBtns = document.querySelectorAll('.sub-btn');
 
 navBtns.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -148,31 +166,11 @@ navBtns.forEach(btn => {
 
     if (btn.dataset.page === 'art') {
       subnav.classList.add('active');
-      filterItems('all');
     } else {
       subnav.classList.remove('active');
     }
   });
 });
-
-// 子导航
-subBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    subBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    filterItems(btn.dataset.cat);
-  });
-});
-
-function filterItems(cat) {
-  caseItems.forEach(item => {
-    if (cat === 'all' || item.dataset.cat === cat) {
-      item.classList.add('show');
-    } else {
-      item.classList.remove('show');
-    }
-  });
-}
 
 // 弹窗
 function openPopup(el){
