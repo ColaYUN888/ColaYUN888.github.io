@@ -104,7 +104,7 @@ body{background:#1a1a1a;color:#fff}
 
 <div class="main">
 
-<!-- 首页（修复分类显示） -->
+<!-- 首页 -->
 <div id="home" class="page active">
   <h2>欢迎来到 CYGG 游戏美术工作室</h2>
   <p class="desc">我们是一支专注于游戏美术制作的专业团队，提供原画设计、3D建模、UI界面、卡牌插画等一站式美术外包服务。用心创作每一份作品，用实力满足客户需求！</p>
@@ -121,7 +121,7 @@ body{background:#1a1a1a;color:#fff}
   </div>
 </div>
 
-<!-- 作品展示（正常显示） -->
+<!-- 作品展示 -->
 <div id="art" class="page">
   <h2>作品展示</h2>
   <p class="desc">点击下方分类，查看我们的专业美术作品，涵盖2D原画、3D模型、UI设计等全品类游戏美术资源。</p>
@@ -177,8 +177,10 @@ body{background:#1a1a1a;color:#fff}
 <div class="footer">© 2026 CYGG Studio 版权所有 | 专业游戏美术外包服务商</div>
 
 <script>
+// 主导航切换
 const navBtns = document.querySelectorAll('.nav-btn');
 const pages = document.querySelectorAll('.page');
+
 navBtns.forEach(btn=>{
   btn.addEventListener('click',()=>{
     navBtns.forEach(b=>b.classList.remove('active'));
@@ -188,20 +190,32 @@ navBtns.forEach(btn=>{
   })
 })
 
+// 子分类导航：点击自动跳转到作品展示页并筛选（完全独立）
 const subBtns = document.querySelectorAll('.sub-btn');
-const items = document.querySelectorAll('.case-item');
+const artItems = document.querySelectorAll('#art .case-item');
+
 subBtns.forEach(btn=>{
   btn.addEventListener('click',()=>{
+    // 切换到作品展示页
+    navBtns.forEach(b=>b.classList.remove('active'));
+    pages.forEach(p=>p.classList.remove('active'));
+    document.querySelector('[data-page="art"]').classList.add('active');
+    document.getElementById('art').classList.add('active');
+    
+    // 子分类高亮
     subBtns.forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
+    
+    // 筛选作品
     let t = btn.dataset.cat;
-    items.forEach(i=>{
+    artItems.forEach(i=>{
       if(t=='all' || i.dataset.cat==t) i.style.display='block';
       else i.style.display='none';
     })
   })
 })
 
+// 图片放大功能
 function openPopup(el){
   document.getElementById('popup').style.display='flex';
   document.getElementById('popupImg').src = el.querySelector('img').src;
