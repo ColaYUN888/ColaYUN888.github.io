@@ -9,13 +9,14 @@
 body{
   background:#1a1a1a;
   color:#fff;
-  background-image: url("1.jpg");
+  background-image: url("CJ-1.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
 
+/* 半透明遮罩，保证文字可读性 */
 body::before {
   content: "";
   position: fixed;
@@ -45,6 +46,7 @@ body::before {
 
 .main{width:1200px;margin:0 auto;padding:30px}
 
+/* 图片排版：整齐、不镂空、紧凑 */
 .case-list{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -111,8 +113,8 @@ img{
 <div class="subnav active" id="subnav">
   <ul>
     <li><a class="sub-btn" data-cat="all">全部</a></li>
-    <li><a class="sub-btn" data-cat="scene">场景原画</a></li>
-    <li><a class="sub-btn active" data-cat="char">角色原画</a></li>
+    <li><a class="sub-btn active" data-cat="scene">场景原画</a></li>
+    <li><a class="sub-btn" data-cat="char">角色原画</a></li>
     <li><a class="sub-btn" data-cat="card">卡牌插画</a></li>
     <li><a class="sub-btn" data-cat="ui">UI设计</a></li>
     <li><a class="sub-btn" data-cat="model">3D模型</a></li>
@@ -124,7 +126,7 @@ img{
     <h2>欢迎来到 CYGG 游戏美术工作室</h2>
     <p style="margin:20px 0;line-height:1.8;color:#ccc">
       专注游戏美术定制 | 原画设计 | 3D建模 | UI界面 | 卡牌插画<br>
-      用心创作，品质服务客户
+      用心创作，用品质服务每一位客户
     </p>
   </div>
 
@@ -132,25 +134,32 @@ img{
     <h2>作品展示</h2>
     <p style="margin:20px 0;line-height:1.8;color:#ccc">点击图片可放大查看</p>
     <div class="case-list">
-      <!-- 场景原画 -->
-      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="1.jpg"></div></div>
-      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="2.jpg"></div></div>
-      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="3.jpg"></div></div>
-      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="4.jpg"></div></div>
-      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="5.jpg"></div></div>
-      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="a.jpg"></div></div>
-      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="b.jpg"></div></div>
-      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="c.jpg"></div></div>
-      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="d.jpg"></div></div>
-      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="f.jpg"></div></div>
+      <!-- 场景原画（CJ 开头） -->
+      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="CJ-1.png"></div></div>
+      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="CJ-2.png"></div></div>
+      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="CJ-3.png"></div></div>
+      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="CJ-JXT.png"></div></div>
+      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="CJ-JZ.png"></div></div>
+      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="CJ-LX.png"></div></div>
+      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="CJ-LX1.png"></div></div>
+      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="CJ-SL.png"></div></div>
+      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="CJ-SL1.png"></div></div>
+      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="CJ-SM.png"></div></div>
+      <div class="case-item" data-cat="scene"><div class="box" onclick="openPopup(this)"><img src="CJ-SM1.png"></div></div>
 
-      <!-- 角色原画 -->
-      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS1.jpg"></div></div>
-      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS2.jpg"></div></div>
-      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS3.jpg"></div></div>
-      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS4.jpg"></div></div>
-      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS5.jpg"></div></div>
-      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS6.jpg"></div></div>
+      <!-- 角色原画（JS 开头） -->
+      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS-1.png"></div></div>
+      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS-2.png"></div></div>
+      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS-3.png"></div></div>
+      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS-4.png"></div></div>
+      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS-5.png"></div></div>
+      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS-6.png"></div></div>
+      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS-7.png"></div></div>
+      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS-8.png"></div></div>
+      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS-9.png"></div></div>
+      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS-10.png"></div></div>
+      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS-11.png"></div></div>
+      <div class="case-item" data-cat="char"><div class="box" onclick="openPopup(this)"><img src="JS-12.png"></div></div>
     </div>
   </div>
 
@@ -182,6 +191,7 @@ img{
 <div class="footer">© 2026 CYGG Studio 版权所有</div>
 
 <script>
+// 主导航
 const navBtns = document.querySelectorAll('.nav-btn');
 const pages = document.querySelectorAll('.page');
 const subnav = document.getElementById('subnav');
@@ -197,13 +207,14 @@ navBtns.forEach(btn => {
 
     if (btn.dataset.page === 'art') {
       subnav.classList.add('active');
-      filterItems('char');
+      filterItems('scene');
     } else {
       subnav.classList.remove('active');
     }
   });
 });
 
+// 子导航筛选
 subBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     subBtns.forEach(b => b.classList.remove('active'));
@@ -222,8 +233,9 @@ function filterItems(cat) {
   });
 }
 
-filterItems('char');
+filterItems('scene');
 
+// 弹窗
 function openPopup(el){
   document.getElementById('popup').style.display='flex';
   document.getElementById('popupImg').src=el.querySelector('img').src;
